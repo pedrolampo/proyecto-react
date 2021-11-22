@@ -1,0 +1,7 @@
+section.shopItems {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1140px;
+    justify-content: center;
+}
