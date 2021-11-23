@@ -7,36 +7,30 @@ const NavBar = () => {
     return (
         <nav className="navbar">
             <div className="navContainer">
-                <a href="../../public/index.html">
+                <a href="/#">
                     <img src={logo} alt="logo" className="logo" />
                 </a>
                 <div className="navBarList">
                     <ul>
                         <li>
-                            <a href="../../public/index.html">HOME</a>
+                            <a href="/#">HOME</a>
                         </li>
                         <li className="subMenu">
-                            <a href="../../public/index.html">SHOP</a>
+                            <a href="/#">SHOP</a>
                             <ul className="dropDownMenu">
                                 <li>
-                                    <a href="../../public/index.html">
-                                        Placeholder
-                                    </a>
+                                    <a href="/#">Placeholder</a>
                                 </li>
                                 <li>
-                                    <a href="../../public/index.html">
-                                        Placeholder
-                                    </a>
+                                    <a href="/#">Placeholder</a>
                                 </li>
                                 <li>
-                                    <a href="../../public/index.html">
-                                        Placeholder
-                                    </a>
+                                    <a href="/#">Placeholder</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="../../public/index.html">CONTACT</a>
+                            <a href="/#">CONTACT</a>
                         </li>
                     </ul>
                 </div>
