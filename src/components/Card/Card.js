@@ -5,23 +5,24 @@ const ItemCount = () => {
     const [count, setCount] = useState(1);
     const stock = 17;
 
-    const neverNegative = () => {
-        if (count >= 0) {
-            setCount(1);
+    const less = () => {
+        if (count === 1) {
+            alert('No se puede menos de 1');
+            return;
         }
+        setCount(count - 1);
     };
 
     return (
         <div className="countContainer">
-            <button className="buttonLeft" onClick={() => setCount(count - 1)}>
+            <button
+                onClick={() => less()}
+                disabled={count === 1 ? 'disabled' : null}
+                className="Restar buttonLeft"
+            >
                 -
             </button>
-            <input
-                className="itemCountInput"
-                type="number"
-                onChange={() => neverNegative}
-                value={count}
-            />
+            <input className="itemCountInput" type="number" value={count} />
             <button className="buttonRight" onClick={() => setCount(count + 1)}>
                 +
             </button>
