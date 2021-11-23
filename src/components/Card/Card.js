@@ -9,7 +9,7 @@ const ItemCount = () => {
         let input = e.target;
         console.log(input);
 
-        if (isNaN(input.value) || input.value >= 0) {
+        if (isNaN(input.value) || input.value <= 0) {
             input.value = 1;
         }
     };
