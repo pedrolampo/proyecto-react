@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import './Card.css';
 
+const stock = 8;
+
 const ItemCount = () => {
     const [count, setCount] = useState(1);
-    const stock = 14;
 
     const less = () => {
         if (count === 1) {
@@ -21,13 +22,21 @@ const ItemCount = () => {
 
     return (
         <div className="countContainer">
-            <button onClick={() => less()} className="buttonLeft">
+            <button
+                className="buttonLeft"
+                onClick={() => less()}
+                disabled={stock === 0 ? 'disabled' : null}
+            >
                 -
             </button>
             <p className="itemCountInput" onChange={() => {}}>
                 {count}
             </p>
-            <button className="buttonRight" onClick={() => stockLimit()}>
+            <button
+                className="buttonRight"
+                onClick={() => stockLimit()}
+                disabled={stock === 0 ? 'disabled' : null}
+            >
                 +
             </button>
         </div>
@@ -44,7 +53,12 @@ const Card = (props) => {
             </div>
             <div className="amountPurchase">
                 <ItemCount />
-                <button className="addToCartButton">Agregar al carrito</button>
+                <button
+                    className="addToCartButton"
+                    disabled={stock === 0 ? 'disabled' : null}
+                >
+                    Agregar al carrito
+                </button>
             </div>
         </div>
     );
