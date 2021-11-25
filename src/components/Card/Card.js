@@ -1,65 +1,39 @@
-import { useState } from 'react';
 import './Card.css';
+import ItemCount from '../Card/ItemCounter';
 
-const stock = 8;
-
-const ItemCount = () => {
-    const [count, setCount] = useState(1);
-
-    const less = () => {
-        if (count === 1) {
-            return;
-        }
-        setCount(count - 1);
-    };
-
-    const stockLimit = () => {
-        if (count >= stock) {
-            return;
-        }
-        setCount(count + 1);
+const PurchaseButton = ({ stock }) => {
+    const isThereStock = () => {
+        if (stock === 0) {
+            return 'No queda stock';
+        } else return 'Agregar al carrito';
     };
 
     return (
-        <div className="countContainer">
-            <button
-                className="buttonLeft"
-                onClick={() => less()}
-                disabled={stock === 0 ? 'disabled' : null}
-            >
-                -
-            </button>
-            <p className="itemCountInput" onChange={() => {}}>
-                {count}
-            </p>
-            <button
-                className="buttonRight"
-                onClick={() => stockLimit()}
-                disabled={stock === 0 ? 'disabled' : null}
-            >
-                +
-            </button>
-        </div>
+        <button
+            className="addToCartButton"
+            disabled={stock === 0 ? 'disabled' : null}
+        >
+            {isThereStock()}
+        </button>
     );
 };
 
-const Card = (props) => {
+const Card = ({ items }) => {
     return (
-        <div className="card">
-            <img src={props.image} alt="itemPhoto" />
-            <div className="itemTitle">
-                <b>{props.item}</b>
-                <p>{props.price}</p>
-            </div>
-            <div className="amountPurchase">
-                <ItemCount />
-                <button
-                    className="addToCartButton"
-                    disabled={stock === 0 ? 'disabled' : null}
-                >
-                    Agregar al carrito
-                </button>
-            </div>
+        <div className="cardsContainer">
+            {items.map((i) => (
+                <div className="card" key={i.id}>
+                    <img src={i.image} alt={i.name} />
+                    <div className="itemTitle">
+                        <b>{i.name}</b>
+                        <p>${i.price}</p>
+                    </div>
+                    <div className="amountPurchase">
+                        <ItemCount stock={i.stock} />
+                        <PurchaseButton stock={i.stock} />
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };

@@ -1,17 +1,22 @@
-import Card from '../Card/Card';
+import { useEffect, useState } from 'react';
 import './ItemListContainer.css';
-import item1 from '../Card/angus4.jpg';
-import item2 from '../Card/angus4.jpg';
-import item3 from '../Card/angus4.jpg';
+import Card from '../Card/Card';
+import getItems from '../ItemList/ItemList';
 
 const ItemListContainer = () => {
+    const [product, setProduct] = useState([]);
+
+    useEffect(() => {
+        const list = getItems();
+
+        list.then((reponse) => {
+            setProduct(reponse);
+        });
+    }, []);
+
     return (
         <section className="shopItems">
-            <Card image={item1} item="Item 1" price="$500" />
-            <Card image={item2} item="Item 2" price="$5400" />
-            <Card image={item3} item="Item 3" price="$300" />
-            <Card image={item3} item="Item 4" price="$500" />
-            <Card image={item3} item="Item 5" price="$100" />
+            <Card items={product} />
         </section>
     );
 };
