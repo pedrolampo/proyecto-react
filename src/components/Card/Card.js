@@ -3,7 +3,7 @@ import './Card.css';
 const PurchaseButton = ({ stock }) => {
     const isThereStock = () => {
         if (stock === 0) {
-            return 'No queda stock';
+            return 'Sin stock';
         } else return 'Ver más';
     };
 
