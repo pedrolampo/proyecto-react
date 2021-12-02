@@ -1,0 +1,25 @@
+.itemDetail {
+    width: 650px;
+    border-radius: 10px;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 15px;
+}
+
+.itemDetail img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+    pointer-events: none;
+}
+
+b {
+    font-size: 1.5em;
+}
+
+p {
+    padding: 5px;
+}

@@ -1,11 +1,10 @@
 import './Card.css';
-import ItemCount from '../Card/ItemCounter';
 
 const PurchaseButton = ({ stock }) => {
     const isThereStock = () => {
         if (stock === 0) {
             return 'No queda stock';
-        } else return 'Agregar al carrito';
+        } else return 'Ver más';
     };
 
     return (
@@ -29,7 +28,6 @@ const Card = ({ items }) => {
                         <p>${i.price}</p>
                     </div>
                     <div className="amountPurchase">
-                        <ItemCount stock={i.stock} />
                         <PurchaseButton stock={i.stock} />
                     </div>
                 </div>
