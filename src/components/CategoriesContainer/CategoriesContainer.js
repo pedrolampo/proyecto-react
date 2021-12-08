@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { getProdByCategory } from '../ItemList/products';
+import { getProdByCategory } from '../Products/products';
 import CategoriesListed from '../CategoriesListed/CategoriesListed';
 
 const CategoriesContainer = () => {

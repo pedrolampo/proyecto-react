@@ -3,5 +3,27 @@ section.shopItems {
     flex-direction: row;
     flex-wrap: wrap;
     width: 1140px;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+section.shopItems ul.categoriesMenu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -1.5rem;
+}
+
+section.shopItems ul.categoriesMenu li {
+    padding: 20px;
+}
+
+section.shopItems ul.categoriesMenu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+section.shopItems ul.categoriesMenu li a:hover {
+    color: black;
 }

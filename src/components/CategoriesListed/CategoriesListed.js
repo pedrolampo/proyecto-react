@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
+import '../ItemDetail/ItemDetail.css';
 
 const CategoriesListed = ({ prods }) => {
     if (prods) {
@@ -8,7 +8,7 @@ const CategoriesListed = ({ prods }) => {
                 <Card items={prods} />
             </div>
         );
-    } else return <p>Cargando...</p>;
+    } else return <p className="loading">Cargando...</p>;
 };
 
 export default CategoriesListed;
