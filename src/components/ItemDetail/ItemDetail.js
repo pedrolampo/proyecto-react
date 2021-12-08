@@ -3,35 +3,22 @@ import ItemCount from '../Card/ItemCounter';
 import ColorPicker from '../ColorPicker/ColorPicker';
 
 const ItemDetail = ({ item }) => {
-    if (item.length > 0) {
-        const prod = item[3];
-
+    if (item) {
         return (
             <div className="itemDetail">
-                <img src={prod.image} alt={prod.name} />
+                <img src={item?.image} alt={item?.name} />
                 <div>
-                    <h2>{prod.name}</h2>
-                    <b>${prod.price}</b>
-                    <p>{prod.description}</p>
+                    <h2>{item?.name}</h2>
+                    <b>${item?.price}</b>
+                    <p>{item?.description}</p>
                 </div>
                 <div>
                     <ColorPicker />
-                    <ItemCount stock={prod.stock} />
+                    <ItemCount stock={item?.stock} />
                 </div>
             </div>
         );
-    } else {
-        return (
-            <>
-                <h1>CARGANDO</h1>
-                <img
-                    src="https://cdn.dribbble.com/users/731859/screenshots/1947177/duck_walk.gif"
-                    alt="cargando"
-                    style={{ width: '40em' }}
-                />
-            </>
-        );
-    }
+    } else return <p className="loading">Cargando...</p>;
 };
 
 export default ItemDetail;

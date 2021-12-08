@@ -1,18 +1,27 @@
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
 
 const App = () => {
     return (
         <div className="App">
-            <header className="App-header">
+            <BrowserRouter>
                 <NavBar />
-            </header>
-            <div className="shopBody">
-                <ItemListContainer />
-                <ItemDetailContainer />
-            </div>
+                <Switch>
+                    <Route exact path="/">
+                        <ItemListContainer />
+                    </Route>
+                    <Route path="/item/:prodId">
+                        <ItemDetailContainer />
+                    </Route>
+                    <Route path="/category/:catId">
+                        <CategoriesContainer />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 };

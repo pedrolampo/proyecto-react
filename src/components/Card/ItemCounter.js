@@ -26,9 +26,7 @@ const ItemCount = (props) => {
             >
                 -
             </button>
-            <p className="itemCountInput" onChange={() => {}}>
-                {count}
-            </p>
+            <p className="itemCountInput">{count}</p>
             <button
                 className="buttonRight"
                 onClick={() => stockLimit()}

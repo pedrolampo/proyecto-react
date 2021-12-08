@@ -1,5 +1,16 @@
 div.cartIconContainer {
-    width: 50px;
+    width: 70px;
+    margin-left: 20px;
+}
+
+div.cartIconContainer a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
 }
 
 img {

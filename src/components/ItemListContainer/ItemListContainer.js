@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import './ItemListContainer.css';
 import Card from '../Card/Card';
-import getItems from '../ItemList/ItemList';
+import { getAllProducts } from '../ItemList/products';
 
 const ItemListContainer = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        const list = getItems();
+        const list = getAllProducts();
 
         list.then((reponse) => {
             setProduct(reponse);

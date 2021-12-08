@@ -23,3 +23,8 @@ b {
 p {
     padding: 5px;
 }
+
+.loading {
+    font-size: 3rem;
+    color: white;
+}

@@ -1,22 +1,30 @@
-import getItems from '../ItemList/ItemList';
 import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { getProductById } from '../ItemList/products';
 import './ItemDetailContainer.css';
+import { useParams } from 'react-router';
 
 const ItemDetailContainer = () => {
-    const [products, setProducts] = useState([]);
+    const [product, setProducts] = useState();
+    const { prodId } = useParams();
 
     useEffect(() => {
-        const list = getItems();
+        getProductById(prodId)
+            .then((i) => {
+                setProducts(i);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
 
-        list.then((resp) => {
-            setProducts(resp);
-        });
-    }, []);
+        return () => {
+            setProducts();
+        };
+    }, [prodId]);
 
     return (
         <section className="itemDetailContainer">
-            <ItemDetail item={products} />
+            <ItemDetail item={product} />
         </section>
     );
 };

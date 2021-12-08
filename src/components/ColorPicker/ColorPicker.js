@@ -5,7 +5,7 @@ const ColorPicker = () => {
         <div className="colorPicker">
             <h4>Elija el color:</h4>
             <div className="colorInputs">
-                <label for="colorRed" className="colors">
+                <label htmlFor="colorRed" className="colors">
                     <input
                         type="radio"
                         name="chooseColor"
@@ -15,7 +15,7 @@ const ColorPicker = () => {
                     <div className="colorRed"></div>
                     Rojo
                 </label>
-                <label for="colorBlue" className="colors">
+                <label htmlFor="colorBlue" className="colors">
                     <input
                         type="radio"
                         name="chooseColor"
@@ -25,7 +25,7 @@ const ColorPicker = () => {
                     <div className="colorBlue"></div>
                     Azul
                 </label>
-                <label for="colorBlack" className="colors">
+                <label htmlFor="colorBlack" className="colors">
                     <input
                         type="radio"
                         name="chooseColor"

@@ -6,6 +6,7 @@ const CartWidget = () => {
         <div className="cartIconContainer">
             <a href="/#">
                 <img src={cartIcon} alt="cart icon" />
+                <span>0</span>
             </a>
         </div>
     );

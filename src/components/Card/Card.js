@@ -1,6 +1,7 @@
 import './Card.css';
+import { Link } from 'react-router-dom';
 
-const PurchaseButton = ({ stock }) => {
+export const PurchaseButton = ({ stock }) => {
     const isThereStock = () => {
         if (stock === 0) {
             return 'Sin stock';
@@ -28,7 +29,9 @@ const Card = ({ items }) => {
                         <p>${i.price}</p>
                     </div>
                     <div className="amountPurchase">
-                        <PurchaseButton stock={i.stock} />
+                        <Link to={`/item/${i.id}`}>
+                            <button className="addToCartButton">Ver más</button>
+                        </Link>
                     </div>
                 </div>
             ))}

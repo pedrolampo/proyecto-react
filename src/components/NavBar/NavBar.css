@@ -3,6 +3,7 @@ nav {
     top: 0;
     left: 0;
     background-color: teal;
+    width: 100%;
 }
 
 .navContainer {
@@ -40,6 +41,7 @@ nav {
     display: none;
     background-color: teal;
     border: 1px solid black;
+    width: 8rem;
 }
 
 .navContainer .navBarList ul li .dropDownMenu li {
@@ -54,6 +56,7 @@ nav {
 .navContainer .navBarList ul .subMenu:hover .dropDownMenu {
     display: block;
     margin-top: 10px;
+    text-align: start;
 }
 
 .navContainer .navBarList ul li a {
