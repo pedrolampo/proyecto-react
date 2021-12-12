@@ -1,5 +1,4 @@
 import logo from '../../logo.svg';
-import LogInButton from '../LogInButton/LogInButton';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
@@ -17,7 +16,7 @@ const NavBar = () => {
                             <Link to={'/'}>HOME</Link>
                         </li>
                         <li className="subMenu">
-                            <a href="/#">CATEGORÍAS</a>
+                            <Link to={'/'}>CATEGORÍAS</Link>
                             <ul className="dropDownMenu">
                                 <li>
                                     <Link to={'/category/remeras'}>
@@ -38,8 +37,9 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="login">
-                    <LogInButton label="LogIn" />
-                    <CartWidget />
+                    <Link to={'/cart'}>
+                        <CartWidget />
+                    </Link>
                 </div>
             </div>
         </nav>

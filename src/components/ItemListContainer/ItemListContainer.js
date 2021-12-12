@@ -17,18 +17,25 @@ const ItemListContainer = () => {
 
     return (
         <section className="shopItems">
-            <ul className="categoriesMenu">
-                <li>
-                    <Link to={'/category/remeras'}>Remeras</Link>
-                </li>
-                <li>
-                    <Link to={'/category/tazas'}>Tazas</Link>
-                </li>
-                <li>
-                    <Link to={'/category/otro'}>Otro</Link>
-                </li>
-            </ul>
-            <Card items={product} />
+            <section className="categoriesMenu">
+                <div className="floatMenu">
+                    <h2>CATEGORÍAS</h2>
+                    <ul className="categoriesList">
+                        <Link to={'/category/remeras'}>
+                            <li>- Remeras</li>
+                        </Link>
+                        <Link to={'/category/tazas'}>
+                            <li>- Tazas</li>
+                        </Link>
+                        <Link to={'/category/otro'}>
+                            <li>- Otro</li>
+                        </Link>
+                    </ul>
+                </div>
+            </section>
+            <section className="productsList">
+                <Card items={product} />
+            </section>
         </section>
     );
 };

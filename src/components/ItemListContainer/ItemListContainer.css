@@ -1,29 +1,48 @@
-section.shopItems {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.shopItems {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 1140px;
-    justify-content: space-around;
 }
 
-section.shopItems ul.categoriesMenu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -1.5rem;
+.categoriesMenu {
+    color: white;
+    border-left: 1px solid grey;
+    height: 20rem;
 }
 
-section.shopItems ul.categoriesMenu li {
-    padding: 20px;
+.categoriesMenu .floatMenu {
+    text-align: start;
+    padding: 1rem;
 }
 
-section.shopItems ul.categoriesMenu li a {
+.categoriesMenu .floatMenu ul {
+    list-style-type: none;
+    text-decoration: none;
+    text-align: start;
+    margin-left: -2rem;
+}
+
+.categoriesMenu .floatMenu ul li {
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 0.5rem;
+    margin-bottom: 0.1rem;
+    cursor: pointer;
+    width: 15rem;
+}
+
+.categoriesMenu .floatMenu a {
     text-decoration: none;
     color: white;
-    font-size: 2rem;
 }
 
-section.shopItems ul.categoriesMenu li a:hover {
+.categoriesMenu .floatMenu ul li:hover {
+    background-color: rgba(128, 128, 128, 1);
+}
+
+.categoriesMenu .floatMenu a:hover {
     color: black;
+}
+
+.productsList {
+    padding: 2rem 0 2rem;
 }
