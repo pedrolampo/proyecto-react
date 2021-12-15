@@ -55,7 +55,7 @@
     justify-content: left;
 }
 
-.card div button.addToCartButton {
+.card div button.detail {
     margin: 10px 0 20px;
     cursor: pointer;
     padding: 7px 20px;
@@ -108,4 +108,17 @@ div.countContainer button.buttonRight {
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     border-top: 1px solid black;
+}
+
+div.purchaseButton button {
+    margin: 0 0 5px;
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background-color: teal;
+}
+
+div.purchaseButton button a {
+    text-decoration: none;
+    color: black;
 }

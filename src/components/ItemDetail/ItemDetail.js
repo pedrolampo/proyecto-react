@@ -1,8 +1,13 @@
 import './ItemDetail.css';
 import ItemCount from '../Card/ItemCounter';
 import ColorPicker from '../ColorPicker/ColorPicker';
+import { useContext } from 'react';
+import { TestContext } from '../Context/CartContext';
 
 const ItemDetail = ({ item }) => {
+    const value = useContext(TestContext);
+    console.log(value);
+
     if (item) {
         return (
             <div className="itemDetail">

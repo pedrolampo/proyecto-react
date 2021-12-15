@@ -30,7 +30,7 @@ const Card = ({ items }) => {
                     </div>
                     <div className="amountPurchase">
                         <Link to={`/item/${i.id}`}>
-                            <button className="addToCartButton">Ver más</button>
+                            <button className="detail">Ver más</button>
                         </Link>
                     </div>
                 </div>
