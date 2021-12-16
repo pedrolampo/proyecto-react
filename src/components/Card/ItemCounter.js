@@ -19,6 +19,7 @@ const ItemCount = (props) => {
         setCount(count + 1);
     };
 
+    // SUBIR ESTA FUNCION A ItemDetail
     const addToCart = () => {
         if (cartQty === 0) {
             setCartQty(count);
