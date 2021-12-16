@@ -22,6 +22,7 @@ const ItemCount = (props) => {
     const addToCart = () => {
         if (cartQty === 0) {
             setCartQty(count);
+            console.log(count);
         } else {
             setCartQty(cartQty + count);
         }
