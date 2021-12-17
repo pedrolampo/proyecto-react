@@ -4,15 +4,13 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
-import { TestContext } from './components/Context/CartContext';
-import { useState } from 'react';
+import Cart from './components/Cart/Cart';
+import { CartContextProvider } from './context/CartContext';
 
 const App = () => {
-    const [saludo] = useState('Hola');
-
     return (
         <div className="App">
-            <TestContext.Provider value={saludo}>
+            <CartContextProvider>
                 <BrowserRouter>
                     <NavBar />
                     <Routes>
@@ -25,9 +23,10 @@ const App = () => {
                             path="/category/:catId"
                             element={<CategoriesContainer />}
                         />
+                        <Route path="/cart" element={<Cart />} />
                     </Routes>
                 </BrowserRouter>
-            </TestContext.Provider>
+            </CartContextProvider>
         </div>
     );
 };

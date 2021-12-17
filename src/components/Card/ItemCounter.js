@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ItemCount = (props) => {
     const [count, setCount] = useState(1);
-    const [cartQty, setCartQty] = useState(0);
+    const [inCart, setInCart] = useState(0);
 
     const less = () => {
         if (count === 1) {
@@ -19,18 +19,13 @@ const ItemCount = (props) => {
         setCount(count + 1);
     };
 
-    // SUBIR ESTA FUNCION A ItemDetail
-    const addToCart = () => {
-        if (cartQty === 0) {
-            setCartQty(count);
-            console.log(count);
-        } else {
-            setCartQty(cartQty + count);
-        }
+    const handleAddToCart = (count) => {
+        setInCart(count);
+        props.addToCart(count);
     };
 
     const replaceCounter = () => {
-        if (cartQty === 0) {
+        if (inCart === 0) {
             return (
                 <>
                     <div className="countContainer">
@@ -51,7 +46,10 @@ const ItemCount = (props) => {
                         </button>
                     </div>
                     <div className="purchaseButton">
-                        <button onClick={() => addToCart()}>
+                        <button
+                            onClick={() => handleAddToCart(count)}
+                            disabled={props.stock === 0 ? 'disabled' : null}
+                        >
                             Agregar al carrito
                         </button>
                     </div>
