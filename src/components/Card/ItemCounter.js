@@ -24,6 +24,12 @@ const ItemCount = (props) => {
         props.addToCart(count);
     };
 
+    const noStock = (stock) => {
+        if (stock === 0) {
+            return 'Sin stock';
+        } else return 'Agregar al carrito';
+    };
+
     const replaceCounter = () => {
         if (inCart === 0) {
             return (
@@ -50,7 +56,7 @@ const ItemCount = (props) => {
                             onClick={() => handleAddToCart(count)}
                             disabled={props.stock === 0 ? 'disabled' : null}
                         >
-                            Agregar al carrito
+                            {noStock(props.stock)}
                         </button>
                     </div>
                 </>

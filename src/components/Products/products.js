@@ -13,6 +13,7 @@ const products = [
         name: 'Remera 1',
         price: 1500,
         stock: 0,
+        inCart: 0,
         category: 'remeras',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -23,6 +24,7 @@ const products = [
         name: 'Remera 2',
         price: 800,
         stock: 25,
+        inCart: 0,
         category: 'remeras',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -33,6 +35,7 @@ const products = [
         name: 'Remera 3',
         price: 500,
         stock: 8,
+        inCart: 0,
         category: 'remeras',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -43,6 +46,7 @@ const products = [
         name: 'Taza 1',
         price: 250,
         stock: 8,
+        inCart: 0,
         category: 'tazas',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -53,6 +57,7 @@ const products = [
         name: 'Taza 2',
         price: 80,
         stock: 30,
+        inCart: 0,
         category: 'tazas',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -63,6 +68,7 @@ const products = [
         name: 'Reloj Pared',
         price: 80,
         stock: 30,
+        inCart: 0,
         category: 'otro',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
@@ -73,6 +79,7 @@ const products = [
         name: 'Poster',
         price: 80,
         stock: 30,
+        inCart: 0,
         category: 'otro',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',

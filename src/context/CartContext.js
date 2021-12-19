@@ -3,23 +3,63 @@ import React, { useState } from 'react';
 export const CartContext = React.createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const [cartQty, setCartQty] = useState();
-    const [itemsInCart, setItemsInCart] = useState([]);
+    const [cartQty, setCartQty] = useState(0);
+    const [itemsInCart, setItemsInCart] = useState();
+
+    const isInCart = (array, newProd) => {
+        return array.some((e) => {
+            return e.id === newProd.id;
+        });
+    };
 
     const addItemsToCart = (prod) => {
-        if (itemsInCart.lenght > 0) {
-            setItemsInCart([...itemsInCart, prod]);
-        } else setItemsInCart(prod);
+        if (itemsInCart) {
+            if (isInCart(itemsInCart, prod)) {
+                console.log('existe');
+                itemsInCart.forEach((e) => {
+                    if (e.id === prod.id) {
+                        e.inCart = e.inCart + prod.inCart;
+                    }
+                });
+            } else {
+                console.log('no existe');
+                itemsInCart.push(prod);
+            }
+        } else setItemsInCart([prod]);
+        cartQuantity();
+    };
 
-        if (cartQty) {
-            setCartQty(cartQty + prod.inCart);
-        } else setCartQty(prod.inCart);
+    // ARREGLAR ESTA FUNCION
+    const cartQuantity = () => {
+        let sum = 0;
+        if (itemsInCart) {
+            itemsInCart.forEach((e) => {
+                sum += e.inCart;
+            });
+        }
+        setCartQty(sum);
+    };
 
-        console.log(itemsInCart);
+    const removeProd = () => {
+        itemsInCart.splice(0, 1);
+    };
+
+    const clearCart = () => {
+        setItemsInCart([]);
+        setCartQty(0);
     };
 
     return (
-        <CartContext.Provider value={{ itemsInCart, cartQty, addItemsToCart }}>
+        <CartContext.Provider
+            value={{
+                itemsInCart,
+                cartQty,
+                addItemsToCart,
+                clearCart,
+                removeProd,
+                cartQuantity,
+            }}
+        >
             {children}
         </CartContext.Provider>
     );
