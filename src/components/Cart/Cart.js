@@ -6,7 +6,7 @@ const Cart = () => {
     console.log(itemsInCart);
 
     const cartButtons = () => {
-        if (itemsInCart) {
+        if (Object.keys(itemsInCart).length > 0) {
             return (
                 <>
                     <button onClick={clearCart}>Clear Cart</button>

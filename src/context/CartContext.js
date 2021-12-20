@@ -4,7 +4,7 @@ export const CartContext = React.createContext();
 
 export const CartContextProvider = ({ children }) => {
     const [cartQty, setCartQty] = useState(0);
-    const [itemsInCart, setItemsInCart] = useState();
+    const [itemsInCart, setItemsInCart] = useState([]);
 
     const isInCart = (array, newProd) => {
         return array.some((e) => {
@@ -13,9 +13,8 @@ export const CartContextProvider = ({ children }) => {
     };
 
     const addItemsToCart = (prod) => {
-        if (itemsInCart) {
+        if (Object.keys(itemsInCart).length > 0) {
             if (isInCart(itemsInCart, prod)) {
-                console.log('existe');
                 const newProducts = itemsInCart.map((e) => {
                     if (e.id === prod.id) {
                         const newProduct = {
@@ -24,12 +23,11 @@ export const CartContextProvider = ({ children }) => {
                         };
                         return newProduct;
                     } else {
-                        return prod;
+                        return e;
                     }
                 });
-                setItemsInCart(...itemsInCart, newProducts);
+                setItemsInCart(newProducts);
             } else {
-                console.log('no existe');
                 itemsInCart.push(prod);
             }
         } else setItemsInCart([prod]);
@@ -39,7 +37,7 @@ export const CartContextProvider = ({ children }) => {
     // ARREGLAR ESTA FUNCION
     const cartQuantity = () => {
         let sum = 0;
-        if (itemsInCart) {
+        if (Object.keys(itemsInCart).length > 0) {
             itemsInCart.forEach((e) => {
                 sum += e.inCart;
             });
