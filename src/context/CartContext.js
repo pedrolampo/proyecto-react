@@ -16,15 +16,21 @@ export const CartContextProvider = ({ children }) => {
         if (itemsInCart) {
             if (isInCart(itemsInCart, prod)) {
                 console.log('existe');
-                let newCart = itemsInCart.map((e) => {
+                const newProducts = itemsInCart.map((e) => {
                     if (e.id === prod.id) {
-                        return (e.inCart = e.inCart + prod.inCart);
-                    } else return;
+                        const newProduct = {
+                            ...e,
+                            inCart: (e.inCart += prod.inCart),
+                        };
+                        return newProduct;
+                    } else {
+                        return prod;
+                    }
                 });
-                setItemsInCart(...itemsInCart, newCart);
+                setItemsInCart(...itemsInCart, newProducts);
             } else {
                 console.log('no existe');
-                setItemsInCart(...itemsInCart, prod);
+                itemsInCart.push(prod);
             }
         } else setItemsInCart([prod]);
         cartQuantity();
