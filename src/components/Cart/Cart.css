@@ -1,0 +1,46 @@
+button {
+    margin: 2rem;
+    padding: 8px 4px;
+    background-color: teal;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.cartTitle {
+    font-size: 3rem;
+}
+
+.emptyCart {
+    font-size: 1.2rem;
+}
+
+.emptyCartContainer a.backToShop {
+    font-size: 1.1rem;
+    color: black;
+    text-decoration: underline;
+}
+
+.emptyCartContainer a.backToShop:hover {
+    color: teal;
+}
+
+.cartContainer {
+    margin-bottom: 2rem;
+}
+
+.productContainer {
+    width: 50rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(36, 94, 102);
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.productContainer img {
+    margin: 8px;
+    cursor: default;
+    border-radius: 8px;
+}

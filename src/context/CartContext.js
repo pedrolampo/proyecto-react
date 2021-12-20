@@ -30,23 +30,31 @@ export const CartContextProvider = ({ children }) => {
             } else {
                 itemsInCart.push(prod);
             }
-        } else setItemsInCart([prod]);
-        cartQuantity();
+            cartQuantity();
+        } else {
+            setItemsInCart([prod]);
+            cartQuantity();
+        }
     };
 
-    // ARREGLAR ESTA FUNCION
     const cartQuantity = () => {
         let sum = 0;
         if (Object.keys(itemsInCart).length > 0) {
             itemsInCart.forEach((e) => {
                 sum += e.inCart;
+                console.log('ei');
             });
-        }
+        } else sum = 0;
         setCartQty(sum);
     };
 
-    const removeProd = () => {
-        itemsInCart.splice(0, 1);
+    const removeProd = (id) => {
+        itemsInCart.splice(
+            itemsInCart.findIndex((e) => e.id === id),
+            1
+        );
+        setItemsInCart(itemsInCart);
+        cartQuantity();
     };
 
     const clearCart = () => {

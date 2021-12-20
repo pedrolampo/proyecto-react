@@ -6,11 +6,17 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const { cartQty } = useContext(CartContext);
 
+    const showAmount = () => {
+        if (cartQty === 0) {
+            return;
+        } else return <span>{cartQty}</span>;
+    };
+
     return (
         <div className="cartIconContainer">
             <div>
                 <img src={cartIcon} alt="cart icon" />
-                <span>{cartQty}</span>
+                {showAmount()}
             </div>
         </div>
     );
