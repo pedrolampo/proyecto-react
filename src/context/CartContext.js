@@ -42,7 +42,6 @@ export const CartContextProvider = ({ children }) => {
         if (Object.keys(itemsInCart).length > 0) {
             itemsInCart.forEach((e) => {
                 sum += e.inCart;
-                console.log('ei');
             });
         } else sum = 0;
         setCartQty(sum);
@@ -54,7 +53,6 @@ export const CartContextProvider = ({ children }) => {
             1
         );
         setItemsInCart(itemsInCart);
-        cartQuantity();
     };
 
     const clearCart = () => {

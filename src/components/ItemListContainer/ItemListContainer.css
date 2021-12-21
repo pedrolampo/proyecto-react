@@ -46,3 +46,8 @@
 .productsList {
     padding: 2rem 0 2rem;
 }
+
+.loading {
+    font-size: 3rem;
+    color: white;
+}

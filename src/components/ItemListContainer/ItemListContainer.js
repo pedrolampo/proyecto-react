@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-import { getAllProducts } from '../Products/products';
 import { Link } from 'react-router-dom';
 import './ItemListContainer.css';
+import { db } from '../../services/Firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 const ItemListContainer = () => {
-    const [product, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const list = getAllProducts();
-
-        list.then((reponse) => {
-            setProduct(reponse);
-        });
+        getDocs(collection(db, 'products'))
+            .then((querySnapshot) => {
+                const products = querySnapshot.docs.map((doc) => {
+                    return { id: doc.id, ...doc.data() };
+                });
+                setProducts(products);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }, []);
+
+    const conditionalProds = (prods) => {
+        if (prods.length > 0) {
+            return <Card items={products} />;
+        } else return <p className="loading">Cargando...</p>;
+    };
 
     return (
         <section className="shopItems">
@@ -34,7 +46,7 @@ const ItemListContainer = () => {
                 </div>
             </section>
             <section className="productsList">
-                <Card items={product} />
+                {conditionalProds(products)}
             </section>
         </section>
     );

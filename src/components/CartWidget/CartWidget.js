@@ -4,12 +4,15 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
-    const { cartQty } = useContext(CartContext);
+    const { cartQty, cartQuantity } = useContext(CartContext);
 
     const showAmount = () => {
+        cartQuantity();
         if (cartQty === 0) {
             return;
-        } else return <span>{cartQty}</span>;
+        } else {
+            return <span>{cartQty}</span>;
+        }
     };
 
     return (
