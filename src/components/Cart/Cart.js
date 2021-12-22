@@ -6,7 +6,6 @@ import './Cart.css';
 const Cart = () => {
     const { itemsInCart, clearCart, removeProd } = useContext(CartContext);
     const [dummyState, setDummyState] = useState(0);
-    console.log(itemsInCart);
 
     const cartButtons = () => {
         const dummyStateCounter = (id) => {

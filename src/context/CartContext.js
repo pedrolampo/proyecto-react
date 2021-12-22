@@ -53,6 +53,7 @@ export const CartContextProvider = ({ children }) => {
             1
         );
         setItemsInCart(itemsInCart);
+        cartQuantity();
     };
 
     const clearCart = () => {

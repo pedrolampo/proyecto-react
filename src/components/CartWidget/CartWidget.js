@@ -1,19 +1,23 @@
 import cartIcon from './cartIcon.png';
 import './CartIcon.css';
-import { useContext } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
     const { cartQty, cartQuantity } = useContext(CartContext);
 
-    const showAmount = () => {
+    const showAmount = useCallback(() => {
         cartQuantity();
         if (cartQty === 0) {
             return;
         } else {
             return <span>{cartQty}</span>;
         }
-    };
+    }, [cartQuantity, cartQty]);
+
+    useEffect(() => {
+        return showAmount();
+    }, [showAmount]);
 
     return (
         <div className="cartIconContainer">
