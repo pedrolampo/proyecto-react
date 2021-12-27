@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 
+const purchase = { buyer: {name: 'jorge', phone: 314314, email: 'hola@hola.com'}, items[{id:1,item:1}]}, total, };
+
 const Cart = () => {
     const { itemsInCart, clearCart, removeProd } = useContext(CartContext);
     const [dummyState, setDummyState] = useState(0);
