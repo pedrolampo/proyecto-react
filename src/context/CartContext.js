@@ -5,6 +5,7 @@ export const CartContext = React.createContext();
 export const CartContextProvider = ({ children }) => {
     const [cartQty, setCartQty] = useState(0);
     const [itemsInCart, setItemsInCart] = useState([]);
+    const [total, setTotal] = useState(0);
 
     const isInCart = (array, newProd) => {
         return array.some((e) => {
@@ -61,15 +62,26 @@ export const CartContextProvider = ({ children }) => {
         setCartQty(0);
     };
 
+    const getTotal = () => {
+        let totalAmount = 0;
+        itemsInCart.forEach((e) => {
+            totalAmount += e.price * e.inCart;
+        });
+        setTotal(totalAmount);
+        return totalAmount;
+    };
+
     return (
         <CartContext.Provider
             value={{
                 itemsInCart,
                 cartQty,
+                total,
                 addItemsToCart,
                 clearCart,
                 removeProd,
                 cartQuantity,
+                getTotal,
             }}
         >
             {children}

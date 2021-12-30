@@ -26,10 +26,13 @@ button {
 
 .cartContainer {
     margin-bottom: 2rem;
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .productContainer {
-    width: 50rem;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
@@ -42,5 +45,13 @@ button {
 .productContainer img {
     margin: 8px;
     cursor: default;
+    border-radius: 8px;
+}
+
+.totalCost {
+    font-size: 2rem;
+    align-self: flex-end;
+    background-color: teal;
+    padding: 7px;
     border-radius: 8px;
 }
