@@ -33,6 +33,7 @@ const Cart = () => {
                 adress: contact.adress,
                 comment: contact.message,
                 email: contact.email,
+                paymentMethod: contact.paymentMethod,
                 date: Timestamp.fromDate(new Date()),
             };
 
@@ -43,7 +44,8 @@ const Cart = () => {
                 itemsPurchased.buyer.length &&
                 itemsPurchased.phone.length &&
                 itemsPurchased.adress.length &&
-                itemsPurchased.email.length
+                itemsPurchased.email.length &&
+                itemsPurchased.paymentMethod !== ''
             ) {
                 itemsPurchased.items.forEach((e) => {
                     setProcessingOrder(true);
@@ -83,7 +85,11 @@ const Cart = () => {
                             clearCart();
                             clearContact();
                         });
-                }
+                } else
+                    setNotification(
+                        'error',
+                        'Parece que hubo un error, por favor inténtalo más tarde.'
+                    );
             } else setNotification('error', 'Faltan campos por rellenar.');
         } else
             setNotification(

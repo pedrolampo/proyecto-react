@@ -14,6 +14,7 @@ const PurchaseForm = () => {
             phone: contactInfo[2].value,
             email: contactInfo[3].value,
             message: contactInfo[4].value,
+            paymentMethod: contactInfo[5].value,
         });
         setShowForm(false);
         submitError();
@@ -41,6 +42,13 @@ const PurchaseForm = () => {
             <br />
             <input className="formInput" id="message" type="text"></input>
             <br />
+            <label htmlFor="paymentMethod">Seleccione método de pago:</label>
+            <br />
+            <select className="formInput" id="paymentMethod">
+                <option default></option>
+                <option>Transeferencia Bancaria</option>
+                <option>Efectivo</option>
+            </select>
             <button
                 onClick={(e) => {
                     submitContactInfo(e);

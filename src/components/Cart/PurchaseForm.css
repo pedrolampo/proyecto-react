@@ -22,6 +22,14 @@ input {
     color: rgb(221, 221, 221);
 }
 
+select {
+    height: 2rem;
+    font-size: 1.2rem;
+    background-color: #282c34;
+    color: rgb(221, 221, 221);
+    border: 1px solid black;
+}
+
 button {
     align-self: center;
 }
