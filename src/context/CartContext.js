@@ -46,6 +46,7 @@ export const CartContextProvider = ({ children }) => {
             });
         } else sum = 0;
         setCartQty(sum);
+        return sum;
     };
 
     const removeProd = (id) => {

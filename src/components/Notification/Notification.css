@@ -1,0 +1,17 @@
+div.notification1 {
+    width: 15rem;
+    height: 6rem;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+div.notification2 {
+    display: none;
+}

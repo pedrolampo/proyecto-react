@@ -17,9 +17,20 @@ export const ContactContextProvider = ({ children }) => {
         }
     };
 
+    const clearContact = () => {
+        setShowForm({});
+    };
+
     return (
         <ContactContext.Provider
-            value={{ contact, setContact, showForm, setShowForm, submitError }}
+            value={{
+                contact,
+                setContact,
+                showForm,
+                setShowForm,
+                submitError,
+                clearContact,
+            }}
         >
             {children}
         </ContactContext.Provider>

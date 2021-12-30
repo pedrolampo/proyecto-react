@@ -16,16 +16,15 @@ import { NotificationContext } from '../../context/NotificationContext';
 import './Cart.css';
 
 const Cart = () => {
+    const [processingOrder, setProcessingOrder] = useState(false);
     const { itemsInCart, clearCart, removeProd, getTotal } =
         useContext(CartContext);
-    const { contact, showForm, setShowForm } = useContext(ContactContext);
+    const { contact, showForm, setShowForm, clearContact } =
+        useContext(ContactContext);
     const { setNotification } = useContext(NotificationContext);
-    const [dummyState, setDummyState] = useState(0);
 
     const confirmOrder = () => {
         if (Object.keys(contact).length > 0) {
-            const batch = writeBatch(db);
-            const outOfStock = [];
             const itemsPurchased = {
                 buyer: contact.name,
                 items: itemsInCart,
@@ -37,6 +36,9 @@ const Cart = () => {
                 date: Timestamp.fromDate(new Date()),
             };
 
+            const batch = writeBatch(db);
+            const outOfStock = [];
+
             if (
                 itemsPurchased.buyer.length &&
                 itemsPurchased.phone.length &&
@@ -44,10 +46,11 @@ const Cart = () => {
                 itemsPurchased.email.length
             ) {
                 itemsPurchased.items.forEach((e) => {
+                    setProcessingOrder(true);
                     getDoc(doc(db, 'products', e.id)).then((docSnapshot) => {
-                        if (docSnapshot.data().stock >= e.quantity) {
-                            batch.update(doc(db, 'items', docSnapshot.id), {
-                                stock: docSnapshot.data().stock - e.quantity,
+                        if (docSnapshot.data().stock >= e.inCart) {
+                            batch.update(doc(db, 'products', docSnapshot.id), {
+                                stock: docSnapshot.data().stock - e.inCart,
                             });
                         } else {
                             outOfStock.push({
@@ -59,8 +62,8 @@ const Cart = () => {
                 });
 
                 if (outOfStock.length === 0) {
-                    addDoc(collection(db, 'orders'), itemsPurchased).then(
-                        ({ id }) => {
+                    addDoc(collection(db, 'orders'), itemsPurchased)
+                        .then(({ id }) => {
                             batch.commit().then(() => {
                                 setNotification(
                                     'success',
@@ -68,20 +71,32 @@ const Cart = () => {
                                     Tú ID de compra es ${id}.`
                                 );
                             });
-                        }
-                    );
+                        })
+                        .catch((error) => {
+                            setNotification(
+                                'error',
+                                `Error al procesar la compra: ${error}.`
+                            );
+                        })
+                        .finally(() => {
+                            setProcessingOrder(false);
+                            clearCart();
+                            clearContact();
+                        });
                 }
-            } else setNotification('error', 'Faltan campos por rellenar');
+            } else setNotification('error', 'Faltan campos por rellenar.');
         } else
-            setNotification('error', 'Por favor rellena los datos de contacto');
+            setNotification(
+                'error',
+                'Por favor rellena los datos de contacto faltantes.'
+            );
     };
 
-    const cartButtons = () => {
-        const dummyStateCounter = (id) => {
-            setDummyState(dummyState + 1);
-            removeProd(id);
-        };
+    if (processingOrder) {
+        return <h1>Se está procesando su orden...</h1>;
+    }
 
+    const cartButtons = () => {
         const totalProdPrice = (prod) => {
             if (prod.inCart === 0) {
                 return prod.price;
@@ -105,7 +120,7 @@ const Cart = () => {
                             </div>
                             <button
                                 className="button"
-                                onClick={() => dummyStateCounter(prod.id)}
+                                onClick={() => removeProd(prod.id)}
                             >
                                 Eliminar
                             </button>
@@ -143,7 +158,7 @@ const Cart = () => {
 
     return (
         <>
-            <h1 className="cartTitle">Tú carrito</h1>
+            <h1 className="cartTitle">Tu carrito</h1>
             {cartButtons()}
         </>
     );

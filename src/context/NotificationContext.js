@@ -5,6 +5,7 @@ export const NotificationContext = React.createContext();
 export const NotificationContextProvider = ({ children }) => {
     const [message, setMessage] = useState('');
     const [severity, setSeverity] = useState('');
+    const [style, setStyle] = useState('notification1');
 
     const setNotification = (severity, message) => {
         setMessage(message);
@@ -22,6 +23,8 @@ export const NotificationContextProvider = ({ children }) => {
                     severity,
                 },
                 setNotification,
+                style,
+                setStyle,
             }}
         >
             {children}
