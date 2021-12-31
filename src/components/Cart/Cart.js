@@ -14,6 +14,7 @@ import {
 import { db } from '../../services/Firebase/firebase';
 import { NotificationContext } from '../../context/NotificationContext';
 import './Cart.css';
+import UserContext from '../../context/UserContext';
 
 const Cart = () => {
     const [processingOrder, setProcessingOrder] = useState(false);
@@ -22,6 +23,7 @@ const Cart = () => {
     const { contact, showForm, setShowForm, clearContact } =
         useContext(ContactContext);
     const { setNotification } = useContext(NotificationContext);
+    const { user } = useContext(UserContext);
 
     const confirmOrder = () => {
         if (Object.keys(contact).length > 0) {
@@ -111,55 +113,57 @@ const Cart = () => {
             }
         };
 
-        if (Object.keys(itemsInCart).length > 0) {
-            return (
-                <div className="cartContainer">
-                    {itemsInCart.map((prod) => (
-                        <div className="productContainer" key={prod.id}>
-                            <img src={prod.image} alt={prod.name} />
-                            <div className="infoContainer">
-                                <h2>{prod.name}</h2>
-                                <div>
-                                    <p>Precio individual: ${prod.price}</p>
-                                    <p>Subtotal: ${totalProdPrice(prod)}</p>
+        if (user) {
+            if (Object.keys(itemsInCart).length > 0) {
+                return (
+                    <div className="cartContainer">
+                        {itemsInCart.map((prod) => (
+                            <div className="productContainer" key={prod.id}>
+                                <img src={prod.image} alt={prod.name} />
+                                <div className="infoContainer">
+                                    <h2>{prod.name}</h2>
+                                    <div>
+                                        <p>Precio individual: ${prod.price}</p>
+                                        <p>Subtotal: ${totalProdPrice(prod)}</p>
+                                    </div>
                                 </div>
+                                <button
+                                    className="button"
+                                    onClick={() => removeProd(prod.id)}
+                                >
+                                    Eliminar
+                                </button>
                             </div>
+                        ))}
+                        <h2 className="totalCost">Total: ${getTotal()}</h2>
+                        <div>
+                            <button className="button" onClick={clearCart}>
+                                Clear Cart
+                            </button>
                             <button
-                                className="button"
-                                onClick={() => removeProd(prod.id)}
+                                onClick={() => {
+                                    setShowForm(true);
+                                }}
                             >
-                                Eliminar
+                                Cargar Info
+                            </button>
+                            <button onClick={() => confirmOrder()}>
+                                Confirmar Compra
                             </button>
                         </div>
-                    ))}
-                    <h2 className="totalCost">Total: ${getTotal()}</h2>
-                    <div>
-                        <button className="button" onClick={clearCart}>
-                            Clear Cart
-                        </button>
-                        <button
-                            onClick={() => {
-                                setShowForm(true);
-                            }}
-                        >
-                            Cargar Info
-                        </button>
-                        <button onClick={() => confirmOrder()}>
-                            Confirmar Compra
-                        </button>
+                        {showForm === false ? null : <PurchaseForm />}
                     </div>
-                    {showForm === false ? null : <PurchaseForm />}
-                </div>
-            );
-        } else
-            return (
-                <div className="emptyCartContainer">
-                    <p className="emptyCart">Tú carrito está vacío</p>
-                    <Link className="backToShop" to={'/'}>
-                        Haz click aquí para seguir comprando
-                    </Link>
-                </div>
-            );
+                );
+            } else
+                return (
+                    <div className="emptyCartContainer">
+                        <p className="emptyCart">Tú carrito está vacío</p>
+                        <Link className="backToShop" to={'/'}>
+                            Haz click aquí para seguir comprando
+                        </Link>
+                    </div>
+                );
+        } else return <h1>Necesitas estar logueado para ver el carrito.</h1>;
     };
 
     return (

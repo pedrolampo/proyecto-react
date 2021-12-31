@@ -6,10 +6,11 @@ div.notification1 {
     border-radius: 8px;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 8rem;
-    right: 1rem;
+    right: 3rem;
     font-size: 1.2rem;
+    justify-content: center;
 }
 
 div.notification2 {

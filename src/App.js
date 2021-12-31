@@ -9,8 +9,22 @@ import { CartContextProvider } from './context/CartContext';
 import { ContactContextProvider } from './context/Contact';
 import { NotificationContextProvider } from './context/NotificationContext';
 import Notification from './components/Notification/Notification';
+import Login from './components/Login/Login';
+import { useEffect, useContext } from 'react';
+import UserContext from './context/UserContext';
 
 const App = () => {
+    const { login } = useContext(UserContext);
+
+    useEffect(() => {
+        const loggedUserJSON = window.localStorage.getItem('user');
+
+        if (loggedUserJSON) {
+            const objUser = JSON.parse(loggedUserJSON);
+            login(objUser);
+        }
+    }, []); //eslint-disable-line
+
     return (
         <div className="App">
             <CartContextProvider>
@@ -34,6 +48,7 @@ const App = () => {
                                     element={<CategoriesContainer />}
                                 />
                                 <Route path="/cart" element={<Cart />} />
+                                <Route path="/login" element={<Login />} />
                             </Routes>
                         </BrowserRouter>
                     </NotificationContextProvider>

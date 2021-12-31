@@ -43,3 +43,9 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+
+p.requiredFields {
+    color: white;
+    padding-top: 1rem;
+    align-self: flex-end;
+}

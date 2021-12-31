@@ -1,0 +1,26 @@
+.loginContainer {
+    width: 1140px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+form {
+    width: 50%;
+    align-self: center;
+}
+
+label {
+    padding-top: 2rem;
+}
+
+.loginButtons {
+    width: 7rem;
+    height: 3rem;
+}

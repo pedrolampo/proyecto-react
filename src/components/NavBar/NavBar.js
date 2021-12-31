@@ -1,9 +1,20 @@
+import { useContext } from 'react';
 import logo from '../../logo.svg';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import UserContext from '../../context/UserContext';
+import { NotificationContext } from '../../context/NotificationContext';
 
 const NavBar = () => {
+    const { user, logout } = useContext(UserContext);
+    const { setNotification } = useContext(NotificationContext);
+
+    const handleLogout = () => {
+        logout();
+        setNotification('error', `Hasta luego, ${user}`);
+    };
+
     return (
         <nav className="navbar">
             <div className="navContainer">
@@ -36,7 +47,16 @@ const NavBar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="login">
+                {user ? (
+                    <button className="login" onClick={handleLogout}>
+                        Logout
+                    </button>
+                ) : (
+                    <button className="login">
+                        <Link to={'/login'}>Login</Link>
+                    </button>
+                )}
+                <div className="cartWidget">
                     <Link to={'/cart'}>
                         <CartWidget />
                     </Link>

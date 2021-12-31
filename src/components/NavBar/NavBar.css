@@ -73,7 +73,7 @@ nav {
     color: white;
 }
 
-.login {
+.cartWidget {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,6 +81,11 @@ nav {
     cursor: pointer;
 }
 
+.cartWidget a {
+    text-decoration: none;
+}
+
 .login a {
     text-decoration: none;
+    color: black;
 }
