@@ -10,7 +10,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .navContainer a {
@@ -77,7 +77,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 50px 10px 10px;
     cursor: pointer;
 }
 

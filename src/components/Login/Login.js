@@ -33,6 +33,9 @@ const Login = () => {
                         'error',
                         'Usuario o contraseña incorrectos'
                     );
+                })
+                .finally(() => {
+                    setNotification('success', `Bienvenido, ${email}`);
                 });
         } else setNotification('error', 'Error al iniciar sesión.');
     };

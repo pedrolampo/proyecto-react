@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import './ItemDetail.css';
 import ItemCount from '../Card/ItemCounter';
-import ColorPicker from '../ColorPicker/ColorPicker';
 import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
@@ -16,13 +15,12 @@ const ItemDetail = ({ item }) => {
         return (
             <div className="itemDetail">
                 <img src={item.image} alt={item.name} />
-                <div>
+                <div className="description">
                     <h2>{item.name}</h2>
                     <b>${item.price}</b>
                     <p>{item.description}</p>
                 </div>
-                <div>
-                    <ColorPicker />
+                <div className="itemCounterContainer">
                     <ItemCount stock={item.stock} addToCart={addToCart} />
                 </div>
             </div>

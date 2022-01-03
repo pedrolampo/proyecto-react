@@ -12,7 +12,7 @@ const NavBar = () => {
 
     const handleLogout = () => {
         logout();
-        setNotification('error', `Hasta luego, ${user}`);
+        setNotification('error', `Hasta luego!`);
     };
 
     return (
@@ -47,19 +47,19 @@ const NavBar = () => {
                         </li>
                     </ul>
                 </div>
-                {user ? (
-                    <button className="login" onClick={handleLogout}>
-                        Logout
-                    </button>
-                ) : (
-                    <button className="login">
-                        <Link to={'/login'}>Login</Link>
-                    </button>
-                )}
                 <div className="cartWidget">
                     <Link to={'/cart'}>
                         <CartWidget />
                     </Link>
+                    {user ? (
+                        <button className="login" onClick={handleLogout}>
+                            Logout
+                        </button>
+                    ) : (
+                        <button className="login">
+                            <Link to={'/login'}>Login</Link>
+                        </button>
+                    )}
                 </div>
             </div>
         </nav>

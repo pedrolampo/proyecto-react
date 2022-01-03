@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { NotificationContext } from '../../context/NotificationContext';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { db } from '../../services/Firebase/firebase';
 import './CreateUser.css';
 
@@ -46,6 +46,7 @@ const CreateUser = () => {
                 email: accountInfo[2].value,
                 usarname: accountInfo[3].value,
                 password: accountInfo[4].value,
+                date: Timestamp.fromDate(new Date()),
             };
 
             createUserWithEmailAndPassword(auth, email, password)

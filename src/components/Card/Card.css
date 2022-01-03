@@ -93,9 +93,20 @@ div.countContainer button {
     background-color: teal;
 }
 
+div.purchaseButton button {
+    margin: 0 0 5px;
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 5px;
+    background-color: teal;
+    border-top-right-radius: 0;
+}
+
 div.countContainer button.buttonLeft {
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-top: 1px solid black;
@@ -104,17 +115,11 @@ div.countContainer button.buttonLeft {
 div.countContainer button.buttonRight {
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     border-top: 1px solid black;
-}
-
-div.purchaseButton button {
-    margin: 0 0 5px;
-    cursor: pointer;
-    padding: 7px 20px;
-    border-radius: 5px;
-    background-color: teal;
 }
 
 div.purchaseButton button a {
