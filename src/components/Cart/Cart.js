@@ -20,7 +20,7 @@ const Cart = () => {
     const [processingOrder, setProcessingOrder] = useState(false);
     const { itemsInCart, clearCart, removeProd, getTotal } =
         useContext(CartContext);
-    const { contact, showForm, setShowForm, clearContact } =
+    const { contact, setContact, showForm, setShowForm, clearContact } =
         useContext(ContactContext);
     const { setNotification } = useContext(NotificationContext);
     const { user } = useContext(UserContext);
@@ -100,6 +100,48 @@ const Cart = () => {
             );
     };
 
+    const contactInfoLoaded = () => {
+        if (Object.keys(contact).length > 0) {
+            return (
+                <>
+                    <div className="contactInfo">
+                        <p>Nombre: {contact.name}</p>
+                        <p>Dirección: {contact.adress}</p>
+                        <p>Nº de teléfono: {contact.phone}</p>
+                        <p>E-Mail: {contact.email}</p>
+                        <p>Método de Pago: {contact.paymentMethod}</p>
+                    </div>
+                    <div>
+                        <button
+                            onClick={() => {
+                                setContact({});
+                                setShowForm(true);
+                            }}
+                        >
+                            Editar info de contacto
+                        </button>
+                        <button
+                            onClick={() => {
+                                setContact({});
+                            }}
+                        >
+                            Borrar info de contacto
+                        </button>
+                    </div>
+                </>
+            );
+        } else
+            return (
+                <button
+                    onClick={() => {
+                        setShowForm(true);
+                    }}
+                >
+                    Cargar Info
+                </button>
+            );
+    };
+
     if (processingOrder) {
         return <h1>Se está procesando su orden...</h1>;
     }
@@ -140,13 +182,7 @@ const Cart = () => {
                             <button className="button" onClick={clearCart}>
                                 Clear Cart
                             </button>
-                            <button
-                                onClick={() => {
-                                    setShowForm(true);
-                                }}
-                            >
-                                Cargar Info
-                            </button>
+                            {contactInfoLoaded()}
                             <button onClick={() => confirmOrder()}>
                                 Confirmar Compra
                             </button>

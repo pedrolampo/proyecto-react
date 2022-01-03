@@ -74,17 +74,26 @@ const PurchaseForm = () => {
             <br />
             <select className="formInput" id="paymentMethod">
                 <option default></option>
-                <option>Transeferencia Bancaria</option>
+                <option>Transferencia Bancaria</option>
                 <option>Efectivo</option>
             </select>
             <p className="requiredFields">* Campos obligatorios</p>
-            <button
-                onClick={(e) => {
-                    submitContactInfo(e);
-                }}
-            >
-                Cargar
-            </button>
+            <div>
+                <button
+                    onClick={() => {
+                        setShowForm(false);
+                    }}
+                >
+                    Cancelar
+                </button>
+                <button
+                    onClick={(e) => {
+                        submitContactInfo(e);
+                    }}
+                >
+                    Cargar
+                </button>
+            </div>
         </form>
     );
 };

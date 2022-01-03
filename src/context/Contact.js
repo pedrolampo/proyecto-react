@@ -18,7 +18,7 @@ export const ContactContextProvider = ({ children }) => {
     };
 
     const clearContact = () => {
-        setShowForm({});
+        setContact({});
     };
 
     return (

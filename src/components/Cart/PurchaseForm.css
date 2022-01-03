@@ -20,6 +20,7 @@ input {
     border: none;
     border-bottom: 1px solid black;
     color: rgb(221, 221, 221);
+    border-radius: 3px;
 }
 
 select {
@@ -28,6 +29,7 @@ select {
     background-color: #282c34;
     color: rgb(221, 221, 221);
     border: 1px solid black;
+    border-radius: 4px;
 }
 
 button {
