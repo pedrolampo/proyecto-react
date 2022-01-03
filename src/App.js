@@ -12,6 +12,7 @@ import Notification from './components/Notification/Notification';
 import Login from './components/Login/Login';
 import { useEffect, useContext } from 'react';
 import UserContext from './context/UserContext';
+import CreateUser from './components/CreateUser/CreateUser';
 
 const App = () => {
     const { login } = useContext(UserContext);
@@ -49,6 +50,10 @@ const App = () => {
                                 />
                                 <Route path="/cart" element={<Cart />} />
                                 <Route path="/login" element={<Login />} />
+                                <Route
+                                    path={'/createUser'}
+                                    element={<CreateUser />}
+                                />
                             </Routes>
                         </BrowserRouter>
                     </NotificationContextProvider>

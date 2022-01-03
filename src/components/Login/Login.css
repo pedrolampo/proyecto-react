@@ -1,14 +1,17 @@
 .loginContainer {
-    width: 1140px;
+    width: 70em;
     display: flex;
     flex-direction: column;
+    height: 75vh;
+    justify-content: center;
 }
 
-h3 {
+h3.loginTitle {
     color: white;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 0;
+    width: 100%;
 }
 
 form {
@@ -20,7 +23,24 @@ label {
     padding-top: 2rem;
 }
 
+.loginButtonsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+}
+
 .loginButtons {
     width: 7rem;
     height: 3rem;
+    margin: 0;
+    font-size: 1rem;
+}
+
+a.createUser {
+    text-decoration: none;
+    color: rgb(72, 72, 211);
+    align-self: center;
+    font-size: 1.1rem;
 }

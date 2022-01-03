@@ -5,9 +5,13 @@ const UserContext = React.createContext();
 export const UserContextProvider = ({ children }) => {
     const [user, setUser] = useState();
 
-    const login = (objUser) => {
-        setUser(objUser.username);
-        window.localStorage.setItem('user', JSON.stringify(objUser));
+    const storeUserData = (userData) => {
+        console.log(userData);
+    };
+
+    const login = (user) => {
+        setUser(user);
+        window.localStorage.setItem('user', JSON.stringify(user));
     };
 
     const logout = () => {
@@ -21,6 +25,7 @@ export const UserContextProvider = ({ children }) => {
                 user,
                 login,
                 logout,
+                storeUserData,
             }}
         >
             {children}
