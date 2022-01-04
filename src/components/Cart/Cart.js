@@ -167,13 +167,13 @@ const Cart = () => {
                                 <img src={prod.image} alt={prod.name} />
                                 <div className="infoContainer">
                                     <h2>{prod.name}</h2>
-                                    <div>
+                                    <div className="prodInfo">
                                         <p>Precio individual: ${prod.price}</p>
                                         <p>Subtotal: ${totalProdPrice(prod)}</p>
                                     </div>
                                 </div>
                                 <button
-                                    className="button"
+                                    className="button deleteButton"
                                     onClick={() => removeProd(prod.id)}
                                 >
                                     Eliminar

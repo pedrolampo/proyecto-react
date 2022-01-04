@@ -20,7 +20,7 @@ const Notification = () => {
         <div
             className={style}
             style={{
-                color: notification.severity === 'error' ? 'red' : 'green',
+                color: notification.severity === 'error' ? 'black' : 'green',
             }}
             onClick={() => changeStyle()}
         >

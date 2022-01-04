@@ -1,23 +1,6 @@
 import './Card.css';
 import { Link } from 'react-router-dom';
 
-export const PurchaseButton = ({ stock }) => {
-    const isThereStock = () => {
-        if (stock === 0) {
-            return 'Sin stock';
-        } else return 'Ver más';
-    };
-
-    return (
-        <button
-            className="addToCartButton"
-            disabled={stock === 0 ? 'disabled' : null}
-        >
-            {isThereStock()}
-        </button>
-    );
-};
-
 const Card = ({ items }) => {
     return (
         <div className="cardsContainer">

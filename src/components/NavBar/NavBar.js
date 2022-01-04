@@ -12,7 +12,10 @@ const NavBar = () => {
 
     const handleLogout = () => {
         logout();
-        setNotification('error', `Hasta luego!`);
+        setNotification('error', `Gracias por visitarnos!`);
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     };
 
     return (
@@ -57,9 +60,17 @@ const NavBar = () => {
                         <CartWidget />
                     </Link>
                     {user ? (
-                        <button className="login" onClick={handleLogout}>
-                            Logout
-                        </button>
+                        <div className="myAccount">
+                            MI CUENTA
+                            <ul className="accountDropDown">
+                                <li>
+                                    <Link to={'/myAccount'}>Mis compras</Link>
+                                </li>
+                                <li>
+                                    <p onClick={handleLogout}>SALIR</p>
+                                </li>
+                            </ul>
+                        </div>
                     ) : (
                         <button className="login">
                             <Link to={'/login'}>Login</Link>
