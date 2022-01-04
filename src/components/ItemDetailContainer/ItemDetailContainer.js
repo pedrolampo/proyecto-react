@@ -2,21 +2,16 @@ import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router';
 import './ItemDetailContainer.css';
-import { db } from '../../services/Firebase/firebase';
-import { getDoc, doc } from 'firebase/firestore';
+import { getSingleProd } from '../../services/Firebase/firebase';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState();
     const { prodId } = useParams();
 
     useEffect(() => {
-        getDoc(doc(db, 'products', prodId))
-            .then((querySnapshot) => {
-                const product = {
-                    id: querySnapshot.id,
-                    ...querySnapshot.data(),
-                };
-                setProduct(product);
+        getSingleProd(prodId)
+            .then((prod) => {
+                setProduct(prod);
             })
             .catch((err) => {
                 console.log(err);

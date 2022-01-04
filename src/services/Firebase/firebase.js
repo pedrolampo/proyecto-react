@@ -1,6 +1,13 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getDocs, collection, query, where } from 'firebase/firestore';
+import {
+    getDocs,
+    collection,
+    query,
+    where,
+    getDoc,
+    doc,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_apiKey,
@@ -34,6 +41,22 @@ export const getProds = (key, op, value) => {
             })
             .catch((err) => {
                 rej(`Error al obtener los productos: ${err}`);
+            });
+    });
+};
+
+export const getSingleProd = (value) => {
+    return new Promise((res, rej) => {
+        getDoc(doc(db, 'products', value))
+            .then((querySnapshot) => {
+                const product = {
+                    id: querySnapshot.id,
+                    ...querySnapshot.data(),
+                };
+                res(product);
+            })
+            .catch((err) => {
+                rej(`Error al obtener el producto: ${err}`);
             });
     });
 };
