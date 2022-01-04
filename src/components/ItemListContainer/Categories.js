@@ -6,14 +6,17 @@ const Categories = () => {
         <div className="floatMenu">
             <h2>CATEGORÍAS</h2>
             <ul className="categoriesList">
-                <Link to={'/category/remeras'}>
-                    <li>- Remeras</li>
+                <Link to={'/category/guitars'}>
+                    <li>- Guitarras</li>
                 </Link>
-                <Link to={'/category/tazas'}>
-                    <li>- Tazas</li>
+                <Link to={'/category/bass'}>
+                    <li>- Bajos</li>
                 </Link>
-                <Link to={'/category/otro'}>
-                    <li>- Otro</li>
+                <Link to={'/category/pianos'}>
+                    <li>- Teclados</li>
+                </Link>
+                <Link to={'/category/drums'}>
+                    <li>- Baterías</li>
                 </Link>
             </ul>
         </div>

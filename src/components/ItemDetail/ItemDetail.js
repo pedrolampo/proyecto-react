@@ -16,7 +16,7 @@ const ItemDetail = ({ item }) => {
             <div className="itemDetail">
                 <img src={item.image} alt={item.name} />
                 <div className="description">
-                    <h2>{item.name}</h2>
+                    <h2>{item.fullName}</h2>
                     <b>${item.price}</b>
                     <p>{item.description}</p>
                 </div>
