@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CategoriesContainer from './components/CategoriesContainer/CategoriesContainer';
 import Cart from './components/Cart/Cart';
 import { CartContextProvider } from './context/CartContext';
 import { ContactContextProvider } from './context/Contact';
@@ -46,7 +45,7 @@ const App = () => {
                                 />
                                 <Route
                                     path="/category/:catId"
-                                    element={<CategoriesContainer />}
+                                    element={<ItemListContainer />}
                                 />
                                 <Route path="/cart" element={<Cart />} />
                                 <Route path="/login" element={<Login />} />

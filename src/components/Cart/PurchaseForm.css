@@ -8,7 +8,7 @@ form {
 
 label {
     font-size: 1.2rem;
-    color: rgb(221, 221, 221);
+    color: black;
 }
 
 input {
@@ -16,18 +16,18 @@ input {
     height: 2rem;
     font-size: 1.2rem;
     padding: 0.2rem;
-    background-color: #282c34;
+    background-color: rgb(202, 202, 202);
     border: none;
     border-bottom: 1px solid black;
-    color: rgb(221, 221, 221);
+    color: black;
     border-radius: 3px;
 }
 
 select {
     height: 2rem;
     font-size: 1.2rem;
-    background-color: #282c34;
-    color: rgb(221, 221, 221);
+    background-color: rgb(202, 202, 202);
+    color: black;
     border: 1px solid black;
     border-radius: 4px;
 }
@@ -47,7 +47,17 @@ input[type='number'] {
 }
 
 p.requiredFields {
-    color: white;
+    color: black;
     padding-top: 1rem;
     align-self: flex-end;
+}
+
+.finishButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.finishButtons button {
+    width: 7rem;
 }

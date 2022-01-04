@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import logo from '../../logo.svg';
+import logo from '../../logo.png';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';

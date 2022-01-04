@@ -1,9 +1,12 @@
-button {
+.button {
     margin: 2rem;
     padding: 8px 4px;
-    background-color: teal;
+    background-color: rgb(70, 70, 70);
     cursor: pointer;
     border-radius: 3px;
+    color: white;
+    width: 9rem;
+    height: 2.5rem;
 }
 
 .cartTitle {
@@ -21,7 +24,7 @@ button {
 }
 
 .emptyCartContainer a.backToShop:hover {
-    color: teal;
+    color: rgb(58, 58, 231);
 }
 
 .cartContainer {
@@ -37,9 +40,10 @@ button {
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     justify-content: center;
-    background-color: rgb(36, 94, 102);
+    background-color: white;
     margin: 10px;
     border-radius: 8px;
+    border: 1px solid rgb(129, 129, 129);
 }
 
 .productContainer img {
@@ -51,9 +55,10 @@ button {
 .totalCost {
     font-size: 2rem;
     align-self: flex-end;
-    background-color: teal;
-    padding: 7px;
+    background-color: rgb(70, 70, 70);
+    padding: 0.5rem 2rem;
     border-radius: 8px;
+    color: white;
 }
 
 .contactInfo {

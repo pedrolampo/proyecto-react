@@ -78,8 +78,9 @@ const PurchaseForm = () => {
                 <option>Efectivo</option>
             </select>
             <p className="requiredFields">* Campos obligatorios</p>
-            <div>
+            <div className="finishButtons">
                 <button
+                    className="button"
                     onClick={() => {
                         setShowForm(false);
                     }}
@@ -87,6 +88,7 @@ const PurchaseForm = () => {
                     Cancelar
                 </button>
                 <button
+                    className="button"
                     onClick={(e) => {
                         submitContactInfo(e);
                     }}

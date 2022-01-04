@@ -117,6 +117,7 @@ const Cart = () => {
                                 setContact({});
                                 setShowForm(true);
                             }}
+                            className="button"
                         >
                             Editar info de contacto
                         </button>
@@ -124,6 +125,7 @@ const Cart = () => {
                             onClick={() => {
                                 setContact({});
                             }}
+                            className="button"
                         >
                             Borrar info de contacto
                         </button>
@@ -136,6 +138,7 @@ const Cart = () => {
                     onClick={() => {
                         setShowForm(true);
                     }}
+                    className="button"
                 >
                     Cargar Info
                 </button>
@@ -183,7 +186,10 @@ const Cart = () => {
                                 Clear Cart
                             </button>
                             {contactInfoLoaded()}
-                            <button onClick={() => confirmOrder()}>
+                            <button
+                                className="button"
+                                onClick={() => confirmOrder()}
+                            >
                                 Confirmar Compra
                             </button>
                         </div>
