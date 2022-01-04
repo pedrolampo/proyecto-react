@@ -61,7 +61,7 @@ const Login = () => {
                     onChange={({ target }) => setPassword(target.value)}
                 />
                 <div className="loginButtonsContainer">
-                    <button className="loginButtons" type="submit">
+                    <button className="loginButtons button" type="submit">
                         Entrar
                     </button>
                     <Link className="createUser" to={'/createUser'}>

@@ -9,6 +9,10 @@
     height: 2.5rem;
 }
 
+.twoLine {
+    height: 3.1rem;
+}
+
 .cartTitle {
     font-size: 3rem;
 }
@@ -62,5 +66,6 @@
 }
 
 .contactInfo {
-    color: white;
+    color: black;
+    font-weight: 500;
 }

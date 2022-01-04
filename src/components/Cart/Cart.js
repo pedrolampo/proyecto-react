@@ -117,7 +117,7 @@ const Cart = () => {
                                 setContact({});
                                 setShowForm(true);
                             }}
-                            className="button"
+                            className="button twoLine"
                         >
                             Editar info de contacto
                         </button>
@@ -125,7 +125,7 @@ const Cart = () => {
                             onClick={() => {
                                 setContact({});
                             }}
-                            className="button"
+                            className="button twoLine"
                         >
                             Borrar info de contacto
                         </button>

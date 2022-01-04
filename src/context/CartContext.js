@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 export const CartContext = React.createContext();
 
 export const CartContextProvider = ({ children }) => {
-    const [cartQty, setCartQty] = useState(0);
     const [itemsInCart, setItemsInCart] = useState([]);
-    const [total, setTotal] = useState(0);
 
     const isInCart = (array, newProd) => {
         return array.some((e) => {
@@ -45,22 +43,16 @@ export const CartContextProvider = ({ children }) => {
                 sum += e.inCart;
             });
         } else sum = 0;
-        setCartQty(sum);
         return sum;
     };
 
     const removeProd = (id) => {
-        itemsInCart.splice(
-            itemsInCart.findIndex((e) => e.id === id),
-            1
-        );
-        setItemsInCart(itemsInCart);
-        cartQuantity();
+        const newCart = itemsInCart.filter((prod) => prod.id !== id);
+        setItemsInCart(newCart);
     };
 
     const clearCart = () => {
         setItemsInCart([]);
-        setCartQty(0);
     };
 
     const getTotal = () => {
@@ -68,7 +60,6 @@ export const CartContextProvider = ({ children }) => {
         itemsInCart.forEach((e) => {
             totalAmount += e.price * e.inCart;
         });
-        setTotal(totalAmount);
         return totalAmount;
     };
 
@@ -76,13 +67,11 @@ export const CartContextProvider = ({ children }) => {
         <CartContext.Provider
             value={{
                 itemsInCart,
-                cartQty,
-                total,
                 addItemsToCart,
                 clearCart,
                 removeProd,
-                cartQuantity,
                 getTotal,
+                cartQuantity,
             }}
         >
             {children}
