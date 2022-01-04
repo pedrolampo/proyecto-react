@@ -30,15 +30,20 @@ const NavBar = () => {
                             <Link to={'/'}>CATEGORÍAS</Link>
                             <ul className="dropDownMenu">
                                 <li>
-                                    <Link to={'/category/remeras'}>
-                                        Remeras
+                                    <Link to={'/category/guitars'}>
+                                        Guitarras
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to={'/category/tazas'}>Tazas</Link>
+                                    <Link to={'/category/bass'}>Bajos</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/category/otro'}>Otro</Link>
+                                    <Link to={'/category/pianos'}>
+                                        Teclados
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to={'/category/drums'}>Baterías</Link>
                                 </li>
                             </ul>
                         </li>
