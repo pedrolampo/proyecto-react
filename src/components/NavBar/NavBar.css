@@ -2,8 +2,9 @@ nav {
     position: relative;
     top: 0;
     left: 0;
-    background-color: teal;
+    background-color: rgb(202, 114, 32);
     width: 100%;
+    border-bottom: 1px solid black;
 }
 
 .navContainer {
@@ -39,7 +40,7 @@ nav {
 .navContainer .navBarList ul li .dropDownMenu {
     position: absolute;
     display: none;
-    background-color: teal;
+    background-color: rgb(202, 114, 32);
     border: 1px solid black;
     width: 8rem;
 }
@@ -84,7 +85,7 @@ nav {
     text-decoration: none;
 }
 
-.login a {
-    text-decoration: none;
-    color: black;
+.login {
+    background-color: rgb(70, 70, 70);
+    color: white;
 }

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-import { Link } from 'react-router-dom';
 import './ItemListContainer.css';
 import { db } from '../../services/Firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import Categories from './Categories';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
@@ -30,20 +30,7 @@ const ItemListContainer = () => {
     return (
         <section className="shopItems">
             <section className="categoriesMenu">
-                <div className="floatMenu">
-                    <h2>CATEGORÍAS</h2>
-                    <ul className="categoriesList">
-                        <Link to={'/category/remeras'}>
-                            <li>- Remeras</li>
-                        </Link>
-                        <Link to={'/category/tazas'}>
-                            <li>- Tazas</li>
-                        </Link>
-                        <Link to={'/category/otro'}>
-                            <li>- Otro</li>
-                        </Link>
-                    </ul>
-                </div>
+                <Categories />
             </section>
             <section className="productsList">
                 {conditionalProds(products)}

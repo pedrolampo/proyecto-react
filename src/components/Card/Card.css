@@ -11,9 +11,10 @@
     grid-template-columns: 1fr 3fr;
     align-items: center;
     justify-content: center;
-    background-color: rgb(36, 94, 102);
+    background-color: white;
     margin: 10px;
     border-radius: 8px;
+    border: 1px rgb(129, 129, 129) solid;
 }
 
 .card img {
@@ -59,8 +60,9 @@
     cursor: pointer;
     padding: 7px 20px;
     border-radius: 5px;
-    background-color: teal;
+    background-color: rgb(70, 70, 70);
     margin-left: 3rem;
+    color: white;
 }
 
 /********** Item Counter **********/
@@ -81,7 +83,8 @@ div.countContainer p {
     text-align: center;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    background-color: teal;
+    background-color: rgb(70, 70, 70);
+    color: white;
 }
 
 div.countContainer button {
@@ -90,7 +93,8 @@ div.countContainer button {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    background-color: teal;
+    background-color: rgb(70, 70, 70);
+    color: white;
 }
 
 div.purchaseButton button {
@@ -98,8 +102,9 @@ div.purchaseButton button {
     cursor: pointer;
     padding: 7px 20px;
     border-radius: 5px;
-    background-color: teal;
+    background-color: rgb(70, 70, 70);
     border-top-right-radius: 0;
+    color: white;
 }
 
 div.countContainer button.buttonLeft {

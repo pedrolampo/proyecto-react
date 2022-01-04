@@ -26,6 +26,7 @@ const Login = () => {
                     const user = userCredential.user;
                     login(user);
                     navigate('/');
+                    setNotification('success', `Bienvenido, ${email}`);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -33,9 +34,6 @@ const Login = () => {
                         'error',
                         'Usuario o contraseña incorrectos'
                     );
-                })
-                .finally(() => {
-                    setNotification('success', `Bienvenido, ${email}`);
                 });
         } else setNotification('error', 'Error al iniciar sesión.');
     };

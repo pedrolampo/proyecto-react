@@ -1,10 +1,11 @@
 .itemDetail {
     width: 1100px;
     border-radius: 10px;
-    background-color: grey;
+    background-color: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 15px;
+    border: 1px solid black;
 }
 
 .itemDetail img {
