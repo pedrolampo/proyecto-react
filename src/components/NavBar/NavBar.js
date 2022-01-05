@@ -61,7 +61,7 @@ const NavBar = () => {
                             MI CUENTA
                             <ul className="accountDropDown">
                                 <li>
-                                    <Link to={'/myAccount'}>Mis compras</Link>
+                                    <Link to={'/myAccount'}>MIS COMPRAS</Link>
                                 </li>
                                 <li>
                                     <p onClick={handleLogout}>SALIR</p>

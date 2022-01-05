@@ -1,7 +1,7 @@
 .button {
     margin: 2rem;
     padding: 8px 4px;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(110, 110, 110);
     cursor: pointer;
     border-radius: 3px;
     color: white;
@@ -78,7 +78,7 @@
 .totalCost {
     font-size: 2rem;
     align-self: flex-end;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(110, 110, 110);
     padding: 0.5rem 2rem;
     border-radius: 8px;
     color: white;
