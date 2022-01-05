@@ -30,7 +30,19 @@ nav {
 
 .navContainer .navBarList ul li {
     display: inline-block;
-    padding-left: 10px;
+}
+
+.mainButtons {
+    background-color: rgb(228, 134, 47);
+    margin: 0 5px;
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 8px;
+    transition: 200ms ease-in-out;
+}
+
+.mainButtons:hover {
+    background-color: rgb(206, 117, 34);
+    border: 2px solid rgb(70, 70, 70);
 }
 
 .subMenu {
@@ -68,7 +80,7 @@ nav {
 }
 
 .navContainer .navBarList ul li a:hover {
-    color: white;
+    color: rgb(56, 56, 56);
 }
 
 .navContainer .navBarList ul li .dropDownMenu li a:hover {
@@ -94,6 +106,10 @@ nav {
     margin-left: 2rem;
 }
 
+.login:hover a {
+    color: black;
+}
+
 .login a {
     color: white;
 }
@@ -101,6 +117,7 @@ nav {
 .myAccount {
     position: relative;
     cursor: default;
+    padding: 0.3rem 0.5rem;
 }
 
 .accountDropDown {

@@ -26,10 +26,10 @@ const NavBar = () => {
                 </Link>
                 <div className="navBarList">
                     <ul>
-                        <li>
+                        <li className="mainButtons">
                             <Link to={'/'}>HOME</Link>
                         </li>
-                        <li className="subMenu">
+                        <li className="subMenu mainButtons">
                             <Link to={'/'}>CATEGORÍAS</Link>
                             <ul className="dropDownMenu">
                                 <li>
@@ -50,14 +50,14 @@ const NavBar = () => {
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li className="mainButtons">
                             <Link to={'/contact'}>CONTACTO</Link>
                         </li>
                     </ul>
                 </div>
                 <div className="cartWidget">
                     {user ? (
-                        <div className="myAccount">
+                        <div className="myAccount mainButtons">
                             MI CUENTA
                             <ul className="accountDropDown">
                                 <li>
@@ -69,7 +69,7 @@ const NavBar = () => {
                             </ul>
                         </div>
                     ) : (
-                        <button className="login">
+                        <button className="login mainButtons">
                             <Link to={'/login'}>Login</Link>
                         </button>
                     )}

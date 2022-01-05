@@ -84,7 +84,7 @@ const CreateUser = () => {
                 <input className="createAccInput" type="password" />
                 <label>Repite la contraseña:</label>
                 <input className="createAccInput" type="password" />
-                <button className="button" type="submit">
+                <button className="button createUserButton" type="submit">
                     Confirmar
                 </button>
             </form>

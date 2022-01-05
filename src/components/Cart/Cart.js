@@ -41,6 +41,7 @@ const Cart = () => {
                 paymentMethod: contact.paymentMethod,
                 date: Timestamp.fromDate(new Date()),
                 userID: parsedUserId.uid,
+                status: 'Esperando confirmación del pago',
             };
 
             const batch = writeBatch(db);

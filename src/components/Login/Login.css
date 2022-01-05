@@ -36,6 +36,12 @@ label {
     height: 3rem;
     margin: 0;
     font-size: 1rem;
+    transition: 100ms ease-in-out;
+}
+
+.loginButtons:hover {
+    background-color: rgb(70, 70, 70);
+    border: 1px solid black;
 }
 
 a.createUser {
@@ -43,4 +49,9 @@ a.createUser {
     color: rgb(72, 72, 211);
     align-self: center;
     font-size: 1.1rem;
+    transition: 100ms ease-in-out;
+}
+
+a.createUser:hover {
+    color: rgb(144, 144, 252);
 }
