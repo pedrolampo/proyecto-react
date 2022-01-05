@@ -56,9 +56,6 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="cartWidget">
-                    <Link to={'/cart'}>
-                        <CartWidget />
-                    </Link>
                     {user ? (
                         <div className="myAccount">
                             MI CUENTA
@@ -76,6 +73,9 @@ const NavBar = () => {
                             <Link to={'/login'}>Login</Link>
                         </button>
                     )}
+                    <Link to={'/cart'}>
+                        <CartWidget />
+                    </Link>
                 </div>
             </div>
         </nav>

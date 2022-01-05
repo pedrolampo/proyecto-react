@@ -105,8 +105,8 @@ nav {
 .accountDropDown {
     position: absolute;
     display: none;
-    padding: 2rem 0.5rem 0;
-    background-color: rgb(202, 114, 32);
+    padding: 0.75rem 0.5rem 0;
+    background-color: rgb(224, 137, 55);
     width: 7rem;
     list-style: none;
 }
