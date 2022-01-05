@@ -5,17 +5,17 @@ import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 import UserContext from '../../context/UserContext';
 import { NotificationContext } from '../../context/NotificationContext';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const { user, logout } = useContext(UserContext);
     const { setNotification } = useContext(NotificationContext);
+    const navigation = useNavigate();
 
     const handleLogout = () => {
         logout();
         setNotification('error', `Gracias por visitarnos!`);
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
+        navigation('/');
     };
 
     return (

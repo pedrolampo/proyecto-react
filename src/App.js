@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import { useEffect, useContext } from 'react';
 import UserContext from './context/UserContext';
 import CreateUser from './components/CreateUser/CreateUser';
+import UserDashboard from './components/UserDashboard/UserDashboard';
 
 const App = () => {
     const { login } = useContext(UserContext);
@@ -52,6 +53,10 @@ const App = () => {
                                 <Route
                                     path={'/createUser'}
                                     element={<CreateUser />}
+                                />
+                                <Route
+                                    path="/myAccount"
+                                    element={<UserDashboard />}
                                 />
                             </Routes>
                         </BrowserRouter>
