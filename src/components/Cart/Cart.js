@@ -23,13 +23,10 @@ const Cart = () => {
     const { contact, setContact, showForm, setShowForm, clearContact } =
         useContext(ContactContext);
     const { setNotification } = useContext(NotificationContext);
-    const { user } = useContext(UserContext);
+    const { user, parsedUserId } = useContext(UserContext);
 
     const confirmOrder = () => {
         if (Object.keys(contact).length > 0) {
-            let userId = window.localStorage.getItem('user');
-            let parsedUserId = JSON.parse(userId);
-
             const itemsPurchased = {
                 buyer: contact.name,
                 items: itemsInCart,

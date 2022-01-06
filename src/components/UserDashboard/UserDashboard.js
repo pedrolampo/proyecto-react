@@ -1,12 +1,12 @@
 import { collection, getDocs, limit, query, where } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import UserContext from '../../context/UserContext';
 import { db } from '../../services/Firebase/firebase';
 import './UserDashboard.css';
 
 const UserDashboard = () => {
     const [orders, setOrders] = useState([]);
-    let userId = window.localStorage.getItem('user');
-    let parsedUserId = JSON.parse(userId);
+    const { parsedUserId } = useContext(UserContext);
 
     useEffect(() => {
         getDocs(
@@ -25,7 +25,7 @@ const UserDashboard = () => {
         return () => {
             setOrders([]);
         };
-    }, [userId]); // eslint-disable-line
+    }, []); // eslint-disable-line
 
     return (
         <div cellSpacing="0" className="ordersContainer">

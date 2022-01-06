@@ -5,6 +5,9 @@ const UserContext = React.createContext();
 export const UserContextProvider = ({ children }) => {
     const [user, setUser] = useState();
 
+    let userId = window.localStorage.getItem('user');
+    let parsedUserId = JSON.parse(userId);
+
     const login = (user) => {
         setUser(user);
         window.localStorage.setItem('user', JSON.stringify(user));
@@ -21,6 +24,7 @@ export const UserContextProvider = ({ children }) => {
                 user,
                 login,
                 logout,
+                parsedUserId,
             }}
         >
             {children}
