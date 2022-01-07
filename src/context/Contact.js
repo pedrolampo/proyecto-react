@@ -21,17 +21,17 @@ export const ContactContextProvider = ({ children }) => {
         setContact({});
     };
 
+    const value = {
+        contact,
+        setContact,
+        showForm,
+        setShowForm,
+        submitError,
+        clearContact,
+    };
+
     return (
-        <ContactContext.Provider
-            value={{
-                contact,
-                setContact,
-                showForm,
-                setShowForm,
-                submitError,
-                clearContact,
-            }}
-        >
+        <ContactContext.Provider value={value}>
             {children}
         </ContactContext.Provider>
     );

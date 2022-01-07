@@ -15,18 +15,18 @@ export const NotificationContextProvider = ({ children }) => {
         }, 3000);
     };
 
+    const value = {
+        notification: {
+            message,
+            severity,
+        },
+        setNotification,
+        style,
+        setStyle,
+    };
+
     return (
-        <NotificationContext.Provider
-            value={{
-                notification: {
-                    message,
-                    severity,
-                },
-                setNotification,
-                style,
-                setStyle,
-            }}
-        >
+        <NotificationContext.Provider value={value}>
             {children}
         </NotificationContext.Provider>
     );

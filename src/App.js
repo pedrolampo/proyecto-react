@@ -11,6 +11,7 @@ import Notification from './components/Notification/Notification';
 import Login from './components/Login/Login';
 import { useEffect, useContext } from 'react';
 import UserContext from './context/UserContext';
+import Contact from './components/Contact/Contact';
 import CreateUser from './components/CreateUser/CreateUser';
 import UserDashboard from './components/UserDashboard/UserDashboard';
 
@@ -48,6 +49,7 @@ const App = () => {
                                     path="/category/:catId"
                                     element={<ItemListContainer />}
                                 />
+                                <Route path="/contact" element={<Contact />} />
                                 <Route path="/cart" element={<Cart />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route

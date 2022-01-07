@@ -1,12 +1,14 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { NotificationContext } from '../../context/NotificationContext';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { db } from '../../services/Firebase/firebase';
 import './CreateUser.css';
+import UserContext from '../../context/UserContext';
 
 const CreateUser = () => {
+    const { user } = useContext(UserContext);
     const { setNotification } = useContext(NotificationContext);
     const navigate = useNavigate();
 
@@ -67,6 +69,10 @@ const CreateUser = () => {
                 });
         } else setNotification('error', 'Error al crear la cuenta.');
     };
+
+    if (user) {
+        return <Navigate to="/" replace={true} />;
+    }
 
     return (
         <div className="createAccContainer">

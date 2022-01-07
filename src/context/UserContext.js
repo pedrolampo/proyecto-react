@@ -15,16 +15,14 @@ export const UserContextProvider = ({ children }) => {
         window.localStorage.removeItem('user');
     };
 
+    const value = {
+        user,
+        login,
+        logout,
+    };
+
     return (
-        <UserContext.Provider
-            value={{
-                user,
-                login,
-                logout,
-            }}
-        >
-            {children}
-        </UserContext.Provider>
+        <UserContext.Provider value={value}>{children}</UserContext.Provider>
     );
 };
 

@@ -13,11 +13,12 @@ import {
 } from 'firebase/firestore';
 import { db } from '../../services/Firebase/firebase';
 import { NotificationContext } from '../../context/NotificationContext';
-import './Cart.css';
 import UserContext from '../../context/UserContext';
+import './Cart.css';
 
 const Cart = () => {
     const [processingOrder, setProcessingOrder] = useState(false);
+
     const { itemsInCart, clearCart, removeProd, getTotal } =
         useContext(CartContext);
     const { contact, setContact, showForm, setShowForm, clearContact } =

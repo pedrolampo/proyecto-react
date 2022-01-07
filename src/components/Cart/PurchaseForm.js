@@ -51,27 +51,16 @@ const PurchaseForm = () => {
     return (
         <form>
             <label htmlFor="name">*Nombre completo:</label>
-            <br />
             <input className="formInput" id="name" type="text" />
-            <br />
             <label htmlFor="adress">*Dirección:</label>
-            <br />
             <input className="formInput" id="adress" type="text" />
-            <br />
             <label htmlFor="phoneNumber">*Nº de teléfono:</label>
-            <br />
             <input className="formInput" id="phoneNumber" type="number" />
-            <br />
             <label htmlFor="email">*E-Mail:</label>
-            <br />
             <input className="formInput" id="email" />
-            <br />
             <label htmlFor="message">Comentario:</label>
-            <br />
             <input className="formInput" id="message" type="text" />
-            <br />
             <label htmlFor="paymentMethod">*Seleccione método de pago:</label>
-            <br />
             <select className="formInput" id="paymentMethod">
                 <option default></option>
                 <option>Transferencia Bancaria</option>
