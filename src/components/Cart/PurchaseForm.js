@@ -3,6 +3,14 @@ import { ContactContext } from '../../context/Contact';
 import './PurchaseForm.css';
 import { NotificationContext } from '../../context/NotificationContext';
 
+export const emailCheck = (email) => {
+    if (email.length) {
+        if (email.includes('@') && email.includes('.com')) {
+            return true;
+        }
+    }
+};
+
 const PurchaseForm = () => {
     const { setContact, setShowForm, submitError } = useContext(ContactContext);
     const { setNotification } = useContext(NotificationContext);
@@ -10,18 +18,7 @@ const PurchaseForm = () => {
     const submitContactInfo = (e) => {
         e.preventDefault();
         let contactInfo = document.querySelectorAll('.formInput');
-
-        const emailCheck = () => {
-            if (contactInfo[3].value.length) {
-                if (
-                    contactInfo[3].value.includes('@') &&
-                    contactInfo[3].value.includes('.com')
-                ) {
-                    return true;
-                }
-            }
-        };
-        let hasAtSign = emailCheck();
+        let validEmail = emailCheck(contactInfo[3].value);
 
         if (
             contactInfo[0].value.length &&
@@ -29,7 +26,7 @@ const PurchaseForm = () => {
             contactInfo[2].value.length &&
             contactInfo[3].value.length &&
             contactInfo[5].value !== '' &&
-            hasAtSign
+            validEmail
         ) {
             setContact({
                 name: contactInfo[0].value,
