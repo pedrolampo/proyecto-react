@@ -10,17 +10,12 @@ Before moving forward with the purchase you must create an account and sing in. 
 
 #### Table of Contents
 
-[Configuration](https://github.com/pedrolampo/proyecto-react#configuration)
-
-[Setting up Firebase](https://github.com/pedrolampo/proyecto-react#setting-up-firebase)
-
-[Firestore Database](https://github.com/pedrolampo/proyecto-react#firestore-database)
-
-[Authentication](https://github.com/pedrolampo/proyecto-react#authentication)
-
-[Running the application](https://github.com/pedrolampo/proyecto-react#running-the-application)
-
-[About the app](https://github.com/pedrolampo/proyecto-react#about-the-app)
+[Configuration](https://github.com/pedrolampo/proyecto-react#configuration)<br>
+[Setting up Firebase](https://github.com/pedrolampo/proyecto-react#setting-up-firebase)<br>
+[Firestore Database](https://github.com/pedrolampo/proyecto-react#firestore-database)<br>
+[Authentication](https://github.com/pedrolampo/proyecto-react#authentication)<br>
+[Running the application](https://github.com/pedrolampo/proyecto-react#running-the-application)<br>
+[About the app](https://github.com/pedrolampo/proyecto-react#about-the-app)<br>
 
 ## Configuration
 
@@ -136,6 +131,5 @@ Next I will be adding a GIF to show the process of purchasing an item.
 
 `GIF`
 
-And that will be all of my app.
-
+And that will be all of my app.<br>
 Thank you for checking it and your interest. Also I'm happy to receive any feedback.
