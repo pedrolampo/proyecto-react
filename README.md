@@ -65,6 +65,12 @@ Each product has to have 8 fields:
 -   price (number)
 -   stock (number)
 
+In the "image" field you should write the path like this:
+
+#### `/img/image.png`
+
+The images should go on public and inside the [img](https://github.com/pedrolampo/proyecto-react/tree/main/public/img) folder
+
 And there you should have all your products uploaded to the Firestore Database.
 
 ## Authentication
@@ -117,4 +123,5 @@ Next I will be adding a GIF to show the process of purchasing an item.
 `GIF`
 
 And that will be all of my app.
+
 Thank you for checking my app and your interest. Also I'm happy to receive any feedback.
