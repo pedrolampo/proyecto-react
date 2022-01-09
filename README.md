@@ -8,6 +8,15 @@ This app acts like an e-commerce where you can search threw a catalogue with dif
 
 Before moving forward with the purchase you must create an account and sing in. This authentication process is made with Firestore Authentication.
 
+#### Table of Contents
+
+[Configuration](https://github.com/pedrolampo/proyecto-react#configuration)
+[Setting up Firebase](https://github.com/pedrolampo/proyecto-react#setting-up-firebase)
+[Firestore Database](https://github.com/pedrolampo/proyecto-react#firestore-database)
+[Authentication](https://github.com/pedrolampo/proyecto-react#authentication)
+[Running the application](https://github.com/pedrolampo/proyecto-react#running-the-application)
+[About the app](https://github.com/pedrolampo/proyecto-react#about-the-app)
+
 ## Configuration
 
 The first thing you should do is clone the repository like so:
@@ -124,4 +133,4 @@ Next I will be adding a GIF to show the process of purchasing an item.
 
 And that will be all of my app.
 
-Thank you for checking my app and your interest. Also I'm happy to receive any feedback.
+Thank you for checking it and your interest. Also I'm happy to receive any feedback.
