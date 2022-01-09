@@ -12,11 +12,11 @@ Before moving forward with the purchase you must create an account and sing in. 
 
 The first thing you should do is clone the repository like so:
 
-### `git clone https://github.com/pedrolampo/proyecto-react.git`
+#### `git clone https://github.com/pedrolampo/proyecto-react.git`
 
 Then add all the dependencies with:
 
-### `npm i`
+#### `npm i`
 
 ## Setting up Firebase
 
