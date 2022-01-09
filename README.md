@@ -18,6 +18,15 @@ Then add all the dependencies with:
 
 #### `npm i`
 
+This will add:
+
+-   React
+-   React-dom
+-   React-router-dom
+-   Firebase
+-   React-scripts
+-   Web-vitals
+
 ## Setting up Firebase
 
 Before initializing our project we have to create a new [Firebase](https://firebase.google.com/).
@@ -83,3 +92,29 @@ You will also see any lint errors in the console.
 ## About the app
 
 If you go to the [App.js](https://github.com/pedrolampo/proyecto-react/blob/main/src/App.js) file, you can see I am using version 17 of React, so if you want to use other paths change them inside the Route component, but make sure to update the Params on every component if you do it.
+
+### How to make a purchase
+
+When you load the app, the first thing you do is see all the products there are, including the out of stock ones.
+
+You can filter by category, and go into the detail of the ones you choose.
+
+In there you can choose the quantity you want to buy, and add them to the cart.
+Note that this only works with products that have stock, if a product runs out of stock, all the button (quantity and add to cart) will be disabled.
+
+You won't be able to see the items in you cart, unless you are signed in.
+So at the top, on the navbar, you can go to the LogIn page and LogIn if you have an account, or sign up if you don't.
+
+When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, the email, the username, the password, and the date the user created his account.
+You will also have the user ID on the `Authentication` page.
+
+Now that you are signed in, you can move on on your purchase. You have to add the contact info and then the purchase will be processed.
+
+If all the info is OK, then you will have a purchase ID that you can see over your user dashboard.
+
+Next I will be adding a GIF to show the process of purchasing an item.
+
+`GIF`
+
+And that will be all of my app.
+Thank you for checking my app and your interest. Also I'm happy to receive any feedback.
