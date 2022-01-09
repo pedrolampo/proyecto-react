@@ -35,14 +35,14 @@ Make sure the .env.local file is in the .gitignore file, it should be under "mis
 .env.local
 ```
 
-#### Firestore Database
+### Firestore Database
 
 After setting Firebase up, create a Firestore Database.
 Choose "production mode" on the first step, and choose the region that best suits you on step 2 (it is usually the recommended one).
 
 When done, enable it.
 
-Create a new collection named "products" and there you will be uploading all the items you want in your shop.
+Create a new collection named `products` and there you will be uploading all the items you want in your shop.
 
 To do so, you have to create a new document on the `products` collection, you can give it an auto ID (recommended), or just give it one yourself.
 Each product has to have 8 fields:
@@ -58,7 +58,7 @@ Each product has to have 8 fields:
 
 And there you should have all your products uploaded to the Firestore Database.
 
-#### Authentication
+### Authentication
 
 First of all, go to the "Authentication" panel and set it up.
 
