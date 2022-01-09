@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Guitar Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created during the React Js course at Coderhouse.
 
-## Available Scripts
+It was bootstrapped with [React Create App](https://github.com/facebook/create-react-app), using the [React Js](https://reactjs.org/) library.
 
-In the project directory, you can run:
+This app acts like an e-commerce where you can search threw a catalogue with differents products; filter by category and add the items to you cart.
+
+Before moving forward with the purchase you must create an account and sing in. This authentication process is made with Firestore Authentication.
+
+## Configuration
+
+The first thing you should do is clone the repository like so:
+
+### `git clone https://github.com/pedrolampo/proyecto-react.git`
+
+Then add all the dependencies with:
+
+### `npm i`
+
+## Setting up Firebase
+
+Before initializing our project we have to create a new [Firebase](https://firebase.google.com/).
+
+Log In and create a new app. On the overview of the project select "Web" as your app to add it, you can follow the steps and set it up for your needs.
+
+When you are asked to add an SDK go the project folder and create an .env.local file on the top level folder (same level as package.json).
+
+Use the .env.example file provided to guide yourself on how to name your credentials; if you want to modify them, you have to modify them in the firebase.js file aswell; and fill it with your credentials that Firebase gives you.
+
+Make sure the .env.local file is in the .gitignore file, it should be under "misc". If it is not, go ahead and add it like so:
+
+```
+# misc
+.env.local
+```
+
+#### Firestore Database
+
+After setting Firebase up, create a Firestore Database.
+Choose "production mode" on the first step, and choose the region that best suits you on step 2 (it is usually the recommended one).
+
+When done, enable it.
+
+Create a new collection named "products" and there you will be uploading all the items you want in your shop.
+
+To do so, you have to create a new document on the `products` collection, you can give it an auto ID (recommended), or just give it one yourself.
+Each product has to have 8 fields:
+
+-   category (string)
+-   description (string)
+-   fullName (string)
+-   image (string)
+-   inCart (number - set it on 0 by default)
+-   name (string)
+-   price (number)
+-   stock (number)
+
+And there you should have all your products uploaded to the Firestore Database.
+
+#### Authentication
+
+First of all, go to the "Authentication" panel and set it up.
+
+On my case I only used `email/password provider`, but you can use which ever you want, just make sure to add it to the app later.
+
+Enable the sign in methods you want, and save.
+
+And that is it with the Firebase configuration.
+
+## Running the application
+
+To start the application just run the npm command:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This runs the app in the development mode.
+It would automatically open [http://localhost:3000](http://localhost:3000) on the browser and load it.
 
-The page will reload if you make edits.\
+The page will reload if you make any edits.
 You will also see any lint errors in the console.
 
-### `npm test`
+## About the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you go to the [App.js](https://github.com/pedrolampo/proyecto-react/blob/main/src/App.js) file, you can see I am using version 17 of React, so if you want to use other paths change them inside the Route component, but make sure to update the Params on every component if you do it.
