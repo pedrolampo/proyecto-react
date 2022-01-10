@@ -129,7 +129,7 @@ If all the info is OK, then you will have a purchase ID that you can see over yo
 
 Next I will be adding a GIF to show the process of purchasing an item.
 
-`GIF`
+![](purchase-guide.gif)
 
 And that will be all of my app.<br>
 Thank you for checking it and your interest. Also, I'm happy to receive any feedback.
