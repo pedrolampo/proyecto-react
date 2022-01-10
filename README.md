@@ -132,4 +132,4 @@ Next I will be adding a GIF to show the process of purchasing an item.
 ![](purchase-guide.gif)
 
 And that will be all of my app.<br>
-Thank you for checking it and your interest. Also, I'm happy to receive any feedback.
+Thank you for checking it and your interest. I'm also happy to receive any feedback.
