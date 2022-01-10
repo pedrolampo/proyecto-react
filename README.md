@@ -55,14 +55,14 @@ Make sure the .env.local file is in the .gitignore file, it should be under "mis
 
 ## Firestore Database
 
-After setting Firebase up, create a Firestore Database.
-Choose "production mode" on the first step, and choose the region that best suits you on step 2 (it is usually the recommended one).
+After setting Firebase up, create a Firestore Database.<br>
+Select "production mode" on the first step, and choose the region that best suits you on step 2 (it is usually the recommended one).
 
 When done, enable it.
 
 Create a new collection named `products` and there you will be uploading all the items you want in your shop.
 
-To do so, you have to create a new document on the `products` collection, you can give it an auto ID (recommended), or just give it one yourself.
+To do so, you have to create a new document on the `products` collection, you can give it an auto ID (recommended), or just give it one yourself.<br>
 Each product has to have 8 fields:
 
 -   category (string)
@@ -78,7 +78,7 @@ In the "image" field you should write the path like this:
 
 #### `/img/image.png`
 
-The images should go on public and inside the [img](https://github.com/pedrolampo/proyecto-react/tree/main/public/img) folder
+The images should go on public and inside the [img](https://github.com/pedrolampo/proyecto-react/tree/main/public/img) folder.
 
 And there you should have all your products uploaded to the Firestore Database.
 
@@ -98,10 +98,10 @@ To start the application just run the npm command:
 
 ### `npm start`
 
-This runs the app in the development mode.
+This runs the app in the development mode.<br>
 It would automatically open [http://localhost:3000](http://localhost:3000) on the browser and load it.
 
-The page will reload if you make any edits.
+The page will reload if you make any edits.<br>
 You will also see any lint errors in the console.
 
 ## About the app
@@ -114,13 +114,13 @@ When you load the app, the first thing you do is see all the products there are,
 
 You can filter by category, and go into the detail of the ones you choose.
 
-In there you can choose the quantity you want to buy, and add them to the cart.
-Note that this only works with products that have stock, if a product runs out of stock, all the button (quantity and add to cart) will be disabled.
+In there you can choose the quantity you want to buy, and add them to the cart.<br>
+Note that this only works with products that have stock, if a product runs out of stock, all the buttons (quantity and add to cart) will be disabled.
 
-You won't be able to see the items in you cart, unless you are signed in.
+You won't be able to see the items in you cart, unless you are signed in.<br>
 So at the top, on the navbar, you can go to the LogIn page and LogIn if you have an account, or sign up if you don't.
 
-When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, the email, the username, the password, and the date the user created his account.
+When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, the email, the username, the password, and the date the user created his account.<br>
 You will also have the user ID on the `Authentication` page.
 
 Now that you are signed in, you can move on on your purchase. You have to add the contact info and then the purchase will be processed.
