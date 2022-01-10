@@ -46,7 +46,7 @@ const CreateUser = () => {
                 name: accountInfo[0].value,
                 lastname: accountInfo[1].value,
                 email: accountInfo[2].value,
-                usarname: accountInfo[3].value,
+                username: accountInfo[3].value,
                 password: accountInfo[4].value,
                 date: Timestamp.fromDate(new Date()),
             };
