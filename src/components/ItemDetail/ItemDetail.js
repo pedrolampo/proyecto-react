@@ -17,10 +17,10 @@ const ItemDetail = ({ item }) => {
                 <img src={item.image} alt={item.name} />
                 <div className="description">
                     <h2>{item.fullName}</h2>
-                    <b>${item.price}</b>
                     <p>{item.description}</p>
                 </div>
                 <div className="itemCounterContainer">
+                    <b>${item.price}</b>
                     <ItemCount stock={item.stock} addToCart={addToCart} />
                 </div>
             </div>
