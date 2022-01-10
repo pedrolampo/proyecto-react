@@ -118,9 +118,9 @@ In there you can choose the quantity you want to buy, and add them to the cart.<
 Note that this only works with products that have stock available, if a product runs out of stock, all the buttons (quantity and add to cart) will be disabled.
 
 You won't be able to see the items in you cart, unless you are signed in.<br>
-So at the top, on the navbar, you can go to the LogIn page and LogIn if you have an account, or sign up if you don't.
+So at the top, on the navbar, you can go to the Login page and login if you have an account, or sign up if you don't.
 
-When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, the email, the username, the password, and the date the user created his account.<br>
+When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, email, username, password, and the date the user created his account.<br>
 You will also have the user ID on the `Authentication` page.
 
 Now that you are signed in, you can move on on your purchase. You have to add the contact info and then the purchase will be processed.
