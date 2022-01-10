@@ -38,9 +38,9 @@ This will add:
 
 ## Setting up Firebase
 
-Before initializing our project we have to create a new [Firebase](https://firebase.google.com/).
+Before initializing the app we have to create a new [Firebase](https://firebase.google.com/) project.
 
-Log In and create a new app. On the overview of the project select "Web" as your app to add it, you can follow the steps and set it up for your needs.
+Log in and create a new app. On the overview of the project select "Web" as your app to add it, you can follow the steps and set it up for your needs.
 
 When you are asked to add an SDK go the project folder and create an .env.local file on the top level folder (same level as package.json).
 
