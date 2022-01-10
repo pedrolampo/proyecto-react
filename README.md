@@ -115,7 +115,7 @@ When you load the app, the first thing you do is see all the products there are,
 You can filter by category, and go into the detail of the ones you choose.
 
 In there you can choose the quantity you want to buy, and add them to the cart.<br>
-Note that this only works with products that have stock, if a product runs out of stock, all the buttons (quantity and add to cart) will be disabled.
+Note that this only works with products that have stock available, if a product runs out of stock, all the buttons (quantity and add to cart) will be disabled.
 
 You won't be able to see the items in you cart, unless you are signed in.<br>
 So at the top, on the navbar, you can go to the LogIn page and LogIn if you have an account, or sign up if you don't.
