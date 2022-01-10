@@ -4,9 +4,9 @@ This project was created during the React Js course at Coderhouse.
 
 It was bootstrapped with [React Create App](https://github.com/facebook/create-react-app), using the [React Js](https://reactjs.org/) library.
 
-This app acts like an e-commerce where you can search threw a catalogue with differents products; filter by category and add the items to you cart.
+This app acts like an e-commerce where you can search through a catalogue with differents products; filter by category and add the items to you cart.
 
-Before moving forward with the purchase you must create an account and sing in. This authentication process is made with Firestore Authentication.
+Before moving forward with the purchase you must create an account and sign in. This authentication process is made with Firestore Authentication.
 
 #### Table of Contents
 
@@ -44,7 +44,7 @@ Log In and create a new app. On the overview of the project select "Web" as your
 
 When you are asked to add an SDK go the project folder and create an .env.local file on the top level folder (same level as package.json).
 
-Use the .env.example file provided to guide yourself on how to name your credentials; if you want to modify them, you have to modify them in the firebase.js file aswell; and fill it with your credentials that Firebase gives you.
+Use the .env.example file provided to guide yourself on how to name your credentials; if you want to modify them, you have to do it in the firebase.js file aswell; and fill it with your credentials that Firebase gives you.
 
 Make sure the .env.local file is in the .gitignore file, it should be under "misc". If it is not, go ahead and add it like so:
 
@@ -117,7 +117,7 @@ You can filter by category, and go into the detail of the ones you choose.
 In there you can choose the quantity you want to buy, and add them to the cart.<br>
 Note that this only works with products that have stock available, if a product runs out of stock, all the buttons (quantity and add to cart) will be disabled.
 
-You won't be able to see the items in you cart, unless you are signed in.<br>
+You won't be able to see the items in your cart, unless you are signed in.<br>
 So at the top, on the navbar, you can go to the Login page and login if you have an account, or sign up if you don't.
 
 When creating an account, all the data will be stored in the Firestore Database under the `users` collection. In there you will have the full name, email, username, password, and the date the user created his account.<br>
@@ -132,4 +132,4 @@ Next I will be adding a GIF to show the process of purchasing an item.
 `GIF`
 
 And that will be all of my app.<br>
-Thank you for checking it and your interest. Also I'm happy to receive any feedback.
+Thank you for checking it and your interest. Also, I'm happy to receive any feedback.
